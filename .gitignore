@@ -8,4 +8,5 @@ tmp/**/*
 *.[oa]
 *.kpf
 nbproject
+nbproject/**/*
 Thumbs.db
