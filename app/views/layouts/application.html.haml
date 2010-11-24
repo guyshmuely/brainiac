@@ -2,9 +2,13 @@
 %html
   %head
     %title
-    =stylesheet_link_tag ''
+    //=stylesheet_link_tag 'client/jqtouch/jqtouch'
     =javascript_include_tag :defaults, :jqtouch
     =yield :head
     =csrf_meta_tag
   %body
+    -if mobile_device?
+      =link_to "Full Site", :mobile => 0
+    -else
+      =link_to "Mobile Site", :mobile => 1
     =yield   
