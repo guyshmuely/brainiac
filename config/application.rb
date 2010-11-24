@@ -31,7 +31,8 @@ module Brainiac
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+    config.action_view.javascript_expansions[:defaults] = %w(lib/jquery/jquery-1.4.4.js lib/jquery/rails)
+    config.action_view.javascript_expansions[:jqtouch] = ['jqtouch', 'jqtouch.transitions'].collect{|js| "lib/jquery/jqtouch/#{js}"}
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
