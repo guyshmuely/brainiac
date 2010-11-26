@@ -8,14 +8,5 @@
     =yield :head
     //=csrf_meta_tag
   %body
-    %div.current
-      - if show_title?
-        %div.toolbar=link_to "Back", nil, :class => "back" unless current_page? root_path
-        %h1=h yield(:title)
-        =link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
-        = yield(:toolbar)
-      -unless flash.empty?
-        %div.info
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}"
-      = yield
+    %div#jqt
+      =yield

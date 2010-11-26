@@ -1,0 +1,11 @@
+#jqt div.content {
+  margin: 10px; }
+#jqt div.team_member {
+  clear: left;
+  padding: 10px 0px; }
+  #jqt div.team_member h2 {
+    margin: 2px 0px;
+    font-family: ChalkboardSE-Bold, chalkboard; }
+  #jqt div.team_member img {
+    float: left;
+    margin-right: 10px; }

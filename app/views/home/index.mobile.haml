@@ -1,5 +1,16 @@
--title "Brainiac"
-
-Welcome to the Brainiac project
-
-%div#about
+%div#home.current
+  %div.toolbar
+    //=link_to "Back", nil, :class => "back" unless current_page? root_path
+    =link_to 'About','#about',:id=>'infoButton',:class=>"button flip"
+    %h1
+      Brainiac
+    //=link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
+    -unless flash.empty?
+      %div.info
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+  %div
+    Welcome to the Brainiac project.
+  %div
+    This project is under construction.
+=render :partial=>"about"
