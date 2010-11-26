@@ -11,16 +11,11 @@ var jQT = new $.jQTouch({
     '/images/client/jqtouch/themes/apple/pinstripes.png',
     '/images/client/jqtouch/themes/apple/toolButton.png',
     '/images/client/jqtouch/themes/apple/toolBar.png',
-    '/images/client/under_construction.png',
-    '/images/client/hagit.png',
-    '/images/client/guy.png',
-    '/images/client/sagi.png'
   ]
 });
 
 if (window.navigator.standalone) {
    //alert ('Thanks for launching this app your home screen')
 } else {
-
-   //alert('Add this app to your home screen for the best experience')
+   alert('Add this app to your home screen for the best experience.')
 } 
