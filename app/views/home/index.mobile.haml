@@ -9,8 +9,10 @@
       %div.info
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
-  %div
+  %div{:style=>'text-align:center;margin-top:10px'}
     Welcome to the Brainiac project.
-  %div
+  %div{:style=>'text-align:center;margin-bottom:10px'}
     This project is under construction.
+  %div{:style=>'width:256px;margin:auto'}
+    =image_tag '/images/client/under_construction.png'
 =render :partial=>"about"
