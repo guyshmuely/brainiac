@@ -74,8 +74,9 @@ body {
     -webkit-border-image: url(/images/client/jqtouch/themes/apple/toolButton.png) 0 5 0 5;
 }
 
-#jqt .button.active, #jqt .cancel.active, #jqt .add.active {
+#jqt .button.active, #jqt .cancel.active, #jqt .add.active, #jqt .button:hover {
     -webkit-border-image: url(/images/client/jqtouch/themes/apple/toolButton.png) 0 5 0 5;
+    -webkit-border-image: url(/images/client/jqtouch/themes/apple/activeButton.png) 0 5 0 5;
 }
 
 #jqt .blueButton {
@@ -89,11 +90,12 @@ body {
     padding: 0;
     max-width: 55px;
     border-width: 0 8px 0 14px;
-    -webkit-border-image: url(/images/client/jqtouch/themes/apple/backButton.png) 0 8 0 14;
+    -webkit-border-image: url(/images/client/jqtouch/themes/apple/backButton.png) 0 8 0 14;    
 }
 
-#jqt .back.active {
+#jqt .back.active, #jqt .back:hover {
     -webkit-border-image: url(/images/client/jqtouch/themes/apple/backButton.png) 0 8 0 14;
+    -webkit-border-image: url(/images/client/jqtouch/themes/apple/activeBackButton.png) 0 8 0 14;
 }
 
 #jqt .leftButton, #jqt .cancel {

@@ -5,6 +5,7 @@ var jQT = new $.jQTouch({
   statusBar: 'default',
   formSelector: '.form',
   preloadImages: [
+    '/images/client/jqtouch/themes/apple/activeBackButton.png',
     '/images/client/jqtouch/themes/apple/backButton.png',
     '/images/client/jqtouch/themes/apple/activeButton.png',
     '/images/client/jqtouch/themes/apple/pinstripes.png',
