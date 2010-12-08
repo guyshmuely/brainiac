@@ -14,8 +14,59 @@ var jQT = new $.jQTouch({
   ]
 });
 
+function activateScroller(id) {    
+        var scroller = $('#' + id + ' div.scroller')[0];
+        if (!$(scroller).hasClass('iscrollActive')) {
+            $(scroller).addClass("iscrollActive")
+            scroller.addEventListener('touchmove', function(e) {e.preventDefault();},false);
+            var iscroll = new iScroll(scroller,{vScrollbar:true, checkDOMChanges:false});
+            scroller.setAttribute('iscroll',iscroll);
+            scroller.iscroll = iscroll
+        }
+        scroller.iscroll.refresh();
+}
+
+$(window).load(function() {    
+    activateScroller('home');
+});
+
 if (window.navigator.standalone) {
    //alert ('Thanks for launching this app your home screen')
 } else {
    alert('Add this app to your home screen for the best experience.')
-} 
+}
+
+jQuery(function() {
+    $('#about').bind('pageAnimationEnd',function(e,info) {
+        if (info.direction=='in') {            
+            activateScroller('about');
+            $('div.bar a.featured').removeClass("selected");
+        }
+    })
+    $('#home').bind('pageAnimationEnd',function(e,info) {
+        if (info.direction=='in') {            
+            activateScroller('home');
+            $('div.bar a.featured').addClass("selected");
+        } else {
+            $('div.bar a.featured').removeClass("selected");
+        }
+    })
+    $('#top').bind('pageAnimationEnd',function(e,info) {
+        if (info.direction=='in') {            
+            activateScroller('top');
+            $('div.bar a.top').addClass("selected");
+        } else {
+            $('div.bar a.top').removeClass("selected");
+        }
+    })
+    $('#categories').bind('pageAnimationEnd',function(e,info) {
+        if (info.direction=='in') {
+            activateScroller('categories');
+            $('div.bar a.categories').addClass("selected");
+        } else {
+            $('div.bar a.categories').removeClass("selected");
+        }
+    })
+
+})
+

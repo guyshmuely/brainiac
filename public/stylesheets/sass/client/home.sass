@@ -1,0 +1,52 @@
+#jqt
+  &.landscape
+    height: 210px
+    min-height: 210px
+    div.main
+      height: 210px
+  &.portrait
+    height: 367px
+    min-height: 367px    
+    div.main
+      height: 367px      
+  div.main
+    position: relative
+    z-index: 1
+    overflow-y: scroll
+    div.scroller
+div.bar
+  position: absolute
+  bottom: 0px
+  height: 49px
+  width: 100%  
+  background: url('/images/client/bar_background.png') repeat-x
+  z-index: 1000
+  a
+    margin: 0px 5px
+    width: 70px
+    color: #999999
+    font-size: 8pt
+    float: left
+    text-decoration: none
+    font-family: Helvetica
+    font-weight: bold
+    text-align: center
+    width: 61px
+    height: 49px
+    line-height: 80px
+    background-position:  center top
+    background-repeat:  no-repeat
+    &.selected , &:hover
+      color: white
+      &.top
+        background-image: url('/images/client/top_selected.png')
+      &.featured
+        background-image: url('/images/client/featured_selected.png')
+      &.categories
+        background-image: url('/images/client/categories_selected.png')
+    &.top
+      background-image: url('/images/client/top.png')
+    &.featured
+      background-image: url('/images/client/featured.png')
+    &.categories
+      background-image: url('/images/client/categories.png')

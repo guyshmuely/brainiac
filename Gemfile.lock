@@ -54,6 +54,9 @@ GEM
     net-ssh (2.0.23)
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
+    paperclip (2.3.6)
+      activerecord
+      activesupport
     pg (0.9.0)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -86,5 +89,6 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   haml (>= 3.0.12)
+  paperclip (>= 2.3.6)
   pg
   rails (= 3.0.3)

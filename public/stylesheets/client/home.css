@@ -1,0 +1,51 @@
+#jqt.landscape {
+  height: 210px;
+  min-height: 210px; }
+  #jqt.landscape div.main {
+    height: 210px; }
+#jqt.portrait {
+  height: 367px;
+  min-height: 367px; }
+  #jqt.portrait div.main {
+    height: 367px; }
+#jqt div.main {
+  position: relative;
+  z-index: 1;
+  overflow-y: scroll; }
+
+div.bar {
+  position: absolute;
+  bottom: 0px;
+  height: 49px;
+  width: 100%;
+  background: url("/images/client/bar_background.png") repeat-x;
+  z-index: 1000; }
+  div.bar a {
+    margin: 0px 5px;
+    width: 70px;
+    color: #999999;
+    font-size: 8pt;
+    float: left;
+    text-decoration: none;
+    font-family: Helvetica;
+    font-weight: bold;
+    text-align: center;
+    width: 61px;
+    height: 49px;
+    line-height: 80px;
+    background-position: center top;
+    background-repeat: no-repeat; }
+    div.bar a.selected, div.bar a:hover {
+      color: white; }
+      div.bar a.selected.top, div.bar a:hover.top {
+        background-image: url("/images/client/top_selected.png"); }
+      div.bar a.selected.featured, div.bar a:hover.featured {
+        background-image: url("/images/client/featured_selected.png"); }
+      div.bar a.selected.categories, div.bar a:hover.categories {
+        background-image: url("/images/client/categories_selected.png"); }
+    div.bar a.top {
+      background-image: url("/images/client/top.png"); }
+    div.bar a.featured {
+      background-image: url("/images/client/featured.png"); }
+    div.bar a.categories {
+      background-image: url("/images/client/categories.png"); }

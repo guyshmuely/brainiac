@@ -1,4 +1,6 @@
--content_for :title, 'Brainiac'
+-content_for :head do
+  =stylesheet_link_tag 'client/home'
+- title 'Brainiac'
 %div#home.current
   %div.toolbar
     //=link_to "Back", nil, :class => "back" unless current_page? root_path
@@ -10,10 +12,15 @@
       %div.info
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
-  %div{:style=>'text-align:center;margin-top:10px'}
-    Welcome to the Brainiac project.
-  %div{:style=>'text-align:center;margin-bottom:10px'}
-    This project is under construction.
-  %div{:style=>'width:256px;margin:auto'}
-    =image_tag '/images/client/under_construction.png'
+  %div.main
+    %div.scroller
+      %div{:style=>'text-align:center;margin-top:10px'}
+        Welcome to the Brainiac project.
+      %div{:style=>'text-align:center;margin-bottom:10px'}
+        This project is under construction.
+      %div{:style=>'width:256px;margin:auto'}
+        =image_tag '/images/client/under_construction.jpg'
+      %div{:style=>'height:15px'}
 =render :partial=>"about"
+=render :partial=>"top"
+=render :partial=>"categories"

@@ -20,6 +20,7 @@ gem 'capistrano'
 
 # Bundle the extra gems:
 gem 'haml', '>=3.0.12'
+gem 'paperclip', '>=2.3.6'
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'

@@ -145,8 +145,8 @@
             // Make sure we are scrolled up to hide location bar
             // toPage.css('top', window.pageYOffset);
 
-            fromPage.trigger('pageAnimationStart', { direction: 'out' });
-            toPage.trigger('pageAnimationStart', { direction: 'in' });
+            fromPage.trigger('pageAnimationStart', {direction: 'out'});
+            toPage.trigger('pageAnimationStart', {direction: 'in'});
 
             if ($.support.animationEvents && animation && jQTSettings.useAnimations) {
 
@@ -835,17 +835,24 @@
 
             // Bind events
             if ($.support.touch) {
-                $body.bind('touchstart', touchStartHandler);
-                $body.bind('click', function(){return false});
+                //$body.bind('touchstart', touchStartHandler);
+                $('body').bind('touchstart', touchStartHandler);
+                //$body.bind('click', function(){return false});
+                $('body').bind('click', function(){return false});
             } else {
-                $body.bind('click', clickHandler);
+                //$body.bind('click', clickHandler);
+                $('body').bind('click', clickHandler);
             }
-            $body.bind('mousedown', mousedownHandler);
-            $body.bind('orientationchange', orientationChangeHandler);
-            $body.bind('submit', submitForm);
-            $body.bind('tap', tapHandler);
-            $body.trigger('orientationchange');
-
+            //$body.bind('mousedown', mousedownHandler);
+            $('body').bind('mousedown', mousedownHandler);
+            //$body.bind('orientationchange', orientationChangeHandler);
+            $('body').bind('orientationchange', orientationChangeHandler);
+            //$body.bind('submit', submitForm);
+            $('body').bind('submit', submitForm);
+            //$body.bind('tap', tapHandler);
+            $('body').bind('tap', tapHandler);
+            //$body.trigger('orientationchange');
+            $('body').trigger('orientationchange');
 /*
             if (jQTSettings.useTouch && $.support.touch) {
                 $body.click(function(e) {
