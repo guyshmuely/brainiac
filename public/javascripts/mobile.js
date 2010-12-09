@@ -10,7 +10,7 @@ var jQT = new $.jQTouch({
     '/images/client/jqtouch/themes/apple/activeButton.png',
     '/images/client/jqtouch/themes/apple/pinstripes.png',
     '/images/client/jqtouch/themes/apple/toolButton.png',
-    '/images/client/jqtouch/themes/apple/toolBar.png',
+    '/images/client/jqtouch/themes/apple/toolbar.png',
   ]
 });
 
