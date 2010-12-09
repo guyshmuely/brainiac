@@ -21,7 +21,7 @@ div.bar {
   background: url("/images/client/bar_background.png") repeat-x;
   z-index: 1000; }
   div.bar a {
-    margin: 0px 5px;
+    margin-left: 2px;
     width: 70px;
     color: #999999;
     font-size: 8pt;
@@ -43,9 +43,17 @@ div.bar {
         background-image: url("/images/client/featured_selected.png"); }
       div.bar a.selected.categories, div.bar a:hover.categories {
         background-image: url("/images/client/categories_selected.png"); }
+      div.bar a.selected.search, div.bar a:hover.search {
+        background-image: url("/images/client/search_selected.png"); }
+      div.bar a.selected.downloads, div.bar a:hover.downloads {
+        background-image: url("/images/client/downloads_selected.png"); }
     div.bar a.top {
       background-image: url("/images/client/top.png"); }
     div.bar a.featured {
       background-image: url("/images/client/featured.png"); }
     div.bar a.categories {
       background-image: url("/images/client/categories.png"); }
+    div.bar a.search {
+      background-image: url("/images/client/search.png"); }
+    div.bar a.downloads {
+      background-image: url("/images/client/downloads.png"); }

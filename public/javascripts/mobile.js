@@ -14,6 +14,11 @@ var jQT = new $.jQTouch({
   ]
 });
 
+function selectBarLink(element) {
+    $('div.bar a.selected').removeClass("selected");
+    $(element).addClass("selected")
+}
+
 function activateScroller(id) {    
         var scroller = $('#' + id + ' div.scroller')[0];
         if (!$(scroller).hasClass('iscrollActive')) {
@@ -38,35 +43,19 @@ if (window.navigator.standalone) {
 
 jQuery(function() {
     $('#about').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') {            
-            activateScroller('about');
-            $('div.bar a.featured').removeClass("selected");
-        }
+        if (info.direction=='in') activateScroller('about');
     })
     $('#home').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') {            
-            activateScroller('home');
-            $('div.bar a.featured').addClass("selected");
-        } else {
-            $('div.bar a.featured').removeClass("selected");
-        }
+        if (info.direction=='in') activateScroller('home');
     })
     $('#top').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') {            
-            activateScroller('top');
-            $('div.bar a.top').addClass("selected");
-        } else {
-            $('div.bar a.top').removeClass("selected");
-        }
+        if (info.direction=='in') activateScroller('top');
     })
     $('#categories').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') {
-            activateScroller('categories');
-            $('div.bar a.categories').addClass("selected");
-        } else {
-            $('div.bar a.categories').removeClass("selected");
-        }
+        if (info.direction=='in') activateScroller('categories');
     })
-
+    $('#search').bind('pageAnimationEnd',function(e,info) {
+        if (info.direction=='in') activateScroller('search');
+    })
 })
 
