@@ -1,7 +1,7 @@
 var jQT = new $.jQTouch({
-  icon: '/images/client/brainiac_icon.png',
+  icon: '/images/client/apple-touch-icon.png',
   //addGlossToIcon: false,
-  startupScreen: "/images/client/brainiac_startup.jpg",
+  startupScreen: "/images/client/apple-touch-startup.jpg",
   statusBar: 'default',
   formSelector: '.form',
   preloadImages: [

@@ -11,6 +11,7 @@ CACHE MANIFEST
 # /jqtouch/javascripts/topfunky-sparkline.js
 # /jqtouch/mobile.js
 
+/
 images/client/jqtouch/themes/apple/backButton.png
 images/client/jqtouch/themes/apple/activeBackButton.png
 images/client/jqtouch/themes/apple/activeButton.png
