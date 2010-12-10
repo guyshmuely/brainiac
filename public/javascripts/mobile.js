@@ -1,16 +1,16 @@
 var jQT = new $.jQTouch({
-  icon: 'images/client/apple-touch-icon.png',
+  icon: '/images/client/apple-touch-icon.png',
   addGlossToIcon: true,
-  startupScreen: "images/client/apple-touch-startup.jpg",
+  startupScreen: "/images/client/apple-touch-startup.jpg",
   statusBar: 'default',
   formSelector: '.form',
   preloadImages: [
-    'images/client/jqtouch/themes/apple/activeBackButton.png',
-    'images/client/jqtouch/themes/apple/backButton.png',
-    'images/client/jqtouch/themes/apple/activeButton.png',
-    'images/client/jqtouch/themes/apple/pinstripes.png',
-    'images/client/jqtouch/themes/apple/toolButton.png',
-    'images/client/jqtouch/themes/apple/toolbar.png',
+    '/images/client/jqtouch/themes/apple/activeBackButton.png',
+    '/images/client/jqtouch/themes/apple/backButton.png',
+    '/images/client/jqtouch/themes/apple/activeButton.png',
+    '/images/client/jqtouch/themes/apple/pinstripes.png',
+    '/images/client/jqtouch/themes/apple/toolButton.png',
+    '/images/client/jqtouch/themes/apple/toolbar.png',
   ]
 });
 
