@@ -1,6 +1,6 @@
 var jQT = new $.jQTouch({
   icon: 'images/client/apple-touch-icon.png',
-  addGlossToIcon: false,
+  addGlossToIcon: true,
   startupScreen: "images/client/apple-touch-startup.jpg",
   statusBar: 'default',
   formSelector: '.form',
