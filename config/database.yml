@@ -21,8 +21,17 @@ test:
   password: brainiac4all
   host: 127.0.0.1
 # ToDo: check what to do with production db
+#production:
+#  adapter: sqlite3
+#  database: db/production.sqlite3
+#  pool: 5
+#  timeout: 5000
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: brainiac_development
   pool: 5
+  username: brainiac
+  password: brainiac4all
+  host: 127.0.0.1
   timeout: 5000
