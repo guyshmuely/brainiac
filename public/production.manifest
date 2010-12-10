@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Rev 2010-12-11
+# Rev 2010-12-12
 
 # /index.html
 # /jqtouch/jqtouch/jqtouch.min.css
@@ -11,7 +11,6 @@ CACHE MANIFEST
 # /jqtouch/javascripts/topfunky-sparkline.js
 # /jqtouch/mobile.js
 
-/
 images/client/jqtouch/themes/apple/backButton.png
 images/client/jqtouch/themes/apple/activeBackButton.png
 images/client/jqtouch/themes/apple/activeButton.png
