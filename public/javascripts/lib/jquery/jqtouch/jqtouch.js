@@ -905,7 +905,8 @@
             goBack: goBack,
             goTo: goTo,
             addAnimation: addAnimation,
-            submitForm: submitForm
+            submitForm: submitForm,
+            tapHandler: tapHandler
         }
         return publicObj;
     }

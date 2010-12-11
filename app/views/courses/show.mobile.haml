@@ -1,0 +1,10 @@
+-content_for :head do
+  //=stylesheet_link_tag 'client/downloads'
+%div.selectable{:id=>"course_#{@course.id}"}
+  %div.toolbar
+    =link_to "Back", nil, :class => "back"
+    %h1
+      Course
+  %div.main
+    %div.scroller
+      =@course.title

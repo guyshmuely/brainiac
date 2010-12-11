@@ -49,7 +49,26 @@ jQuery(function() {
         if (info.direction=='in') activateScroller('home');
     })
     $('#top').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') activateScroller('top');
+        if (info.direction=='in') {
+            var $page = $(this);
+            if ($page.data("loaded")) {
+              return;
+            }
+            app.getCourses(function(req) {
+                var $ul = $("#top ul:first");
+                $ul.append(req.responseText);
+                $('#top ul:first a').click(function(e) {
+                    e.preventDefault();
+                    jQT.tapHandler(e)
+                    //this.tap();
+                    //jqTouch.goTo();
+                    //jQT.goTo(this.href,'slide');
+                    return false
+                });
+                $page.data("loaded", true);
+            });
+            activateScroller('top');            
+        }
     })
     $('#categories').bind('pageAnimationEnd',function(e,info) {
         if (info.direction=='in') activateScroller('categories');
@@ -59,3 +78,18 @@ jQuery(function() {
     })
 })
 
+
+var app = {
+  getCourses:function (f) {
+    $.ajax({
+      type:'get', url:'/courses', data:'',
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+          f(req)
+        } else {
+          alert("There was an error fetching courses");
+        }
+      }
+    });
+  }
+};

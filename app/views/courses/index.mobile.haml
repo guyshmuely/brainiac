@@ -1,15 +1,11 @@
-%div#courses
-  %div.toolbar
-    =link_to "Back", nil, :class => "back" unless current_page? root_path
-    %h1
-      Courses
-    -unless flash.empty?
-      %div.info
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-  %div{:style=>'text-align:center;margin-top:10px'}
-    %div="Number of courses: #{@courses.size()}"
-    -for course in @courses
-      %div{:style=>'text-align:center;margin-top:10px'}
+-for course in @courses
+  %li{:class=>"#{cycle(:odd,:even)}"}
+    -link_to course_path(course) do
+      %div.price
+        =course.price==0 ? 'FREE' : raw("&#8362; #{course.price}")
+      %div.picture
         =image_tag course.image.url(:thumb)
-        =course.title
+      %div.creator
+        Guy shmuely
+      %div.title
+        =course.title  
