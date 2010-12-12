@@ -1,6 +1,12 @@
 class Course < ActiveRecord::Base
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, 
+                    :storage => :s3,
+                    :path => "/:attachment/:id/:style/:filename",                    
+                    :s3_credentials => {:access_key_id => S3[:key],
+                                        :secret_access_key => S3[:secret]},
+                    :bucket => S3[:bucket],
+                    :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   def price
     self.price_in_cents.to_f/100

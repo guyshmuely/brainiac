@@ -29,6 +29,10 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.4)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -82,11 +86,13 @@ GEM
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    xml-simple (1.0.12)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-s3
   capistrano
   haml (>= 3.0.12)
   paperclip (>= 2.3.6)

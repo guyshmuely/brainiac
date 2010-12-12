@@ -10,3 +10,4 @@ tmp/**/*
 nbproject
 nbproject/**/*
 Thumbs.db
+config/s3.yml

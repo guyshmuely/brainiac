@@ -19,6 +19,7 @@ gem 'capistrano'
 # gem 'ruby-debug19'
 
 # Bundle the extra gems:
+gem 'aws-s3'
 gem 'haml', '>=3.0.12'
 gem 'paperclip', '>=2.3.6'
 # gem 'bj'
