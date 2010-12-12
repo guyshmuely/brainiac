@@ -34,6 +34,7 @@ images/client/top.png
 images/client/top_selected.png
 
 NETWORK:
+http://s3.amazonaws.com/brainiac/images/
 images/client/under_construction.jpg
 images/client/guy.jpg
 images/client/hagit.jpg

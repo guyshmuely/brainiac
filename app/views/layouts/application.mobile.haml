@@ -14,8 +14,8 @@
       =yield
     %div.bar
       %div{:style=>'width: 318px; margin: 0px auto;'}
-        =link_to 'Featured', '#home', :class=>'featured selected', :ontap=>'selectBarLink(this)'
-        =link_to 'Categories', '#categories', :class=>'categories', :ontap=>'selectBarLink(this)'
+        =link_to 'Featured', '#home', :class=>'featured selected', :ontouchstart=>'selectBarLink(this)'
+        =link_to 'Categories', '#categories', :class=>'categories', :ontouchstart=>'selectBarLink(this)'
         =link_to 'Top 25', '#top', :class=>'top', :ontouchstart=>'selectBarLink(this)'
         =link_to 'Search', '#search', :class=>'search', :ontouchstart=>'selectBarLink(this)'
         =link_to 'Downloads', '#downloads', :class=>'downloads', :ontouchstart=>'selectBarLink(this)'
