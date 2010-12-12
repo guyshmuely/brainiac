@@ -1,5 +1,6 @@
 # If an s3.yml file exists, use the key, secret key, and bucket values from there.
 # Otherwise, pull them from the environment.
+S3 = {}
 if File.exists?("#{Rails.root}/config/s3.yml")
   s3_config = YAML.load_file("#{Rails.root}/config/s3.yml")
   S3[:key] = s3_config[Rails.env]['key']
