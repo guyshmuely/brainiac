@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
     @courses = Course.all
     respond_to do |format|
       format.html
+      format.json {render :json=> @courses.to_json}
       format.mobile { render :layout => false }
     end
   end
