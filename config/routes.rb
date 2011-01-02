@@ -4,7 +4,9 @@ Brainiac::Application.routes.draw do
   resources :courses
 
   namespace 'admin' do
-    resources :courses
+    resources :courses do
+      resources :cards
+    end
   end
 
   # The priority is based upon order of creation:

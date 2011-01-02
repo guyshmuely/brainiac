@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
 
+  has_many :cards
   has_attached_file :image, 
                     :storage => :s3,
                     :path => "/:attachment/:id/:style/:filename",                    
@@ -18,6 +19,10 @@ class Course < ActiveRecord::Base
 
   def price_in_cents
     super || 0
+  end
+
+  def number_of_cards
+    self.cards.count
   end
 
 end
