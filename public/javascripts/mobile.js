@@ -66,8 +66,8 @@ jQuery(function() {
                     return false
                 });
                 $page.data("loaded", true);
-            });
-            activateScroller('top');            
+                activateScroller('top');
+            });            
         }
     })
     $('#categories').bind('pageAnimationEnd',function(e,info) {

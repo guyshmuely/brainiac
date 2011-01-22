@@ -1,0 +1,12 @@
+-content_for :head do
+  //=stylesheet_link_tag 'client/downloads'
+%div#home.current
+  %div.toolbar
+    //=link_to "Back", nil, :class => "back"
+    %h1
+      Course
+  %div.main
+    =@course.title
+    =link_to 'Start','#card_a', :class=>"whiteButton slideup"
+
+=render :partial=>"play"

@@ -1,0 +1,40 @@
+%div#card_a.selectable
+  %div.toolbar
+    %h1
+      Card A
+    =link_to 'Finish','#home', :class=>"button slidedown"
+  %div.main
+    %strong
+      Card A
+    %div.content
+    =link_to 'Next','#card_b', :class=>"whiteButton slideleft"
+
+
+%div#solution_a.selectable
+  %div.toolbar
+    %h1
+      Solution A
+    =link_to 'Finish','#home', :class=>"button slidedown"
+  %div.main
+    %strong
+      Solution A
+
+%div#card_b.selectable
+  %div.toolbar
+    %h1
+      Card B
+    =link_to 'Finish','#home', :class=>"button slidedown"
+  %div.main
+    %strong
+      Card B
+    %div.content
+    =link_to 'Next','#card_a', :class=>"whiteButton slideleft"
+
+%div#solution_b.selectable
+  %div.toolbar
+    %h1
+      Solution A
+    =link_to 'Finish','#home', :class=>"button slidedown"
+  %div.main
+    %strong
+      Solution A

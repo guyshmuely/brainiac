@@ -1,0 +1,29 @@
+!!!
+%html{:manifest=>"/course_#{Rails.env}.manifest", :lang=>'en' , 'xml:lang'=>'en', :xmlns=>'http://www.w3.org/1999/xhtml'}
+  %head
+    %meta{:charset => "UTF-8"}
+    //%meta{:name=>"viewport", :content=>"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"}
+    //%meta{:name=>"apple-mobile-web-app-capable", :content=>"yes"}
+    //%meta{:name=>"apple-mobile-web-app-status-bar-style", :content=>"default"}    
+    //%link{:rel=>"apple-touch-icon", :href=>icon}
+    //%link{:rel=>"apple-touch-startup-image", :href=>"/images/client/apple-touch-startup.jpg"}
+    %title
+      =@course.title
+    =stylesheet_link_tag 'client/jqtouch/jqtouch' , 'client/jqtouch/themes/apple','client/course', :cache => 'cached/course'
+    - icon_path = @course.image.file? ? @course.image.url(:thumb) : '/images/client/apple-touch-icon.png'
+    :javascript
+      var icon_path = "#{icon_path}";
+      var course_id = "#{@course.id}";
+    =javascript_include_tag :defaults, :jqtouch, 'iscroll', 'bookmark_bubble', 'course', :cache => 'cached/course'
+    =yield :head
+    //=csrf_meta_tag
+  %body
+    %div#jqt
+      =yield
+    :javascript      
+      if (window.navigator.standalone) {          
+        //alert ('Thanks for launching this app your home screen')
+      } else {
+        //$("div#jqt").hide();
+        //alert('Add this app to your home screen for the best experience.');
+      }

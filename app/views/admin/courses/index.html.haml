@@ -1,2 +1,7 @@
 -for course in @courses
-  %div=course.title
+  %div
+    =image_tag course.image.url(:thumb) if course.image.file?
+    =course.title
+    =link_to 'edit', edit_admin_course_path(course)
+    =link_to "delete", admin_course_path(course), :method => :delete, :confirm => "are you sure?"
+    =link_to "cards (#{course.cards.count})", admin_course_cards_path(course)

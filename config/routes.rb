@@ -9,6 +9,12 @@ Brainiac::Application.routes.draw do
     end
   end
 
+  namespace 'client' do
+    resources :courses do
+      get :data, :on => :member
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

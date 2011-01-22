@@ -18,11 +18,19 @@ class Admin::CoursesController < ApplicationController
   end
 
   def edit
-
+    @course = Course.find(params[:id])
   end
 
   def update
-    
+    @course = Course.find(params[:id])
+    @course.update_attributes(params[:course])
+    redirect_to :action=>:index
+  end
+
+  def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+    redirect_to :action=>:index
   end
 
 end
