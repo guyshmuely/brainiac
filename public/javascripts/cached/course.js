@@ -8062,9 +8062,11 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
     (c) 2010 by jQTouch project members.
     See LICENSE.txt for license.
 
-    $Revision: 150 $
-    $Date: Tue Oct 19 13:10:44 EDT 2010 $
+    $Revision: 161 $
+    $Date: Wed Jan 19 23:43:35 EST 2011 $
     $LastChangedBy: jonathanstark $
+
+
 
 */
 
@@ -8081,6 +8083,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             currentPage='',
             orientation='portrait',
             tapReady=true,
+            lastTime=0,
             lastAnimationTime=0,
             touchSelectors=[],
             publicObj={},
@@ -8092,13 +8095,13 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 addGlossToIcon: true,
                 backSelector: '.back, .cancel, .goback',
                 cacheGetRequests: true,
-                debug: true,
+                debug: false,
                 fallback2dAnimation: 'fade',
                 fixedViewport: true,
                 formSelector: 'form',
                 fullScreen: true,
                 fullScreenClass: 'fullscreen',
-                hoverDelay: 150,
+                hoverDelay: 50,
                 icon: null,
                 icon4: null, // experimental
                 moveThreshold: 10,
@@ -8108,9 +8111,8 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 statusBar: 'default', // other options: black-translucent, black
                 submitSelector: '.submit',
                 touchSelector: 'a, .touch',
-                unloadMessage: 'Are you sure you want to leave this page? Doing so will log you out of the app.',
                 useAnimations: true,
-                useTouch: true, // experimental
+                useFastTouch: true, // experimental
                 animations: [ // highest to lowest priority
                     {selector:'.cube', name:'cubeleft', is3d:true},
                     {selector:'.cubeleft', name:'cubeleft', is3d:true},
@@ -8132,11 +8134,14 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             };
 
         function _debug(message) {
+            now = (new Date).getTime();
+            delta = now - lastTime;
+            lastTime = now;
             if (jQTSettings.debug) {
                 if (message) {
-                    console.log(message);
+                    console.log(delta + ': ' + message);
                 } else {
-                    console.log('Called ' + arguments.callee.caller.name);
+                    console.log(delta + ': ' + 'Called ' + arguments.callee.caller.name);
                 }
             }
         }
@@ -8151,6 +8156,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             hist.unshift({
                 page: page,
                 animation: animation,
+                hash: '#' + page.attr('id'),
                 id: page.attr('id')
             });
         }
@@ -8190,7 +8196,6 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
         }
         function doNavigation(fromPage, toPage, animation, backwards) {
             _debug();
-            // _debug('animation.name: ' + animation.name + '; backwards: ' + backwards);
 
             // Error check for target page
             if (toPage.length === 0) {
@@ -8212,8 +8217,8 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             // Make sure we are scrolled up to hide location bar
             // toPage.css('top', window.pageYOffset);
 
-            fromPage.trigger('pageAnimationStart', {direction: 'out'});
-            toPage.trigger('pageAnimationStart', {direction: 'in'});
+            fromPage.trigger('pageAnimationStart', { direction: 'out' });
+            toPage.trigger('pageAnimationStart', { direction: 'in' });
 
             if ($.support.animationEvents && animation && jQTSettings.useAnimations) {
 
@@ -8225,6 +8230,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 }
 
                 // Reverse animation if need be
+                var finalAnimationName;
                 if (backwards) {
                     if (animation.name.indexOf('left') > 0) {
                         finalAnimationName = animation.name.replace(/left/, 'right');
@@ -8234,10 +8240,14 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                         finalAnimationName = animation.name.replace(/up/, 'down');
                     } else if (animation.name.indexOf('down') > 0) {
                         finalAnimationName = animation.name.replace(/down/, 'up');
+                    } else {
+                        finalAnimationName = animation.name;
                     }
                 } else {
                     finalAnimationName = animation.name;
                 }
+
+                // _debug('finalAnimationName is ' + finalAnimationName);
 
                 // Bind internal "cleanup" callback
                 fromPage.bind('webkitAnimationEnd', navigationEndHandler);
@@ -8257,11 +8267,11 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
 
                 if ($.support.animationEvents && animation && jQTSettings.useAnimations) {
                     fromPage.unbind('webkitAnimationEnd', navigationEndHandler);
-                    fromPage.attr('class', '');
-                    toPage.attr('class', 'current');
+                    fromPage.removeClass(finalAnimationName + ' out current');
+                    toPage.removeClass(finalAnimationName + ' in');
                     // toPage.css('top', 0);
                 } else {
-                    fromPage.attr('class', '');
+                    fromPage.removeClass(finalAnimationName + ' out current');
                 }
 
                 // Housekeeping
@@ -8277,7 +8287,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 setHash(currentPage.attr('id'));
                 tapReady = true;
 
-                // Finally, trigger custom events
+                // Trigger custom events
                 toPage.trigger('pageAnimationEnd', {direction:'in', animation:animation});
                 fromPage.trigger('pageAnimationEnd', {direction:'out', animation:animation});
 
@@ -8302,8 +8312,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 _debug('You are on the first panel.');
             }
 
-            var from = hist[0],
-                to = hist[1];
+            var from = hist[0], to = hist[1];
 
             if (doNavigation(from.page, to.page, from.animation, true)) {
                 return publicObj;
@@ -8312,8 +8321,6 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 return false;
             }
 
-            // Prevent default behavior
-            return false;
         }
         function goTo(toPage, animation, reverse) {
             _debug();
@@ -8334,7 +8341,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             }
 
             if (typeof(toPage) === 'string') {
-                nextPage = $(toPage);
+                var nextPage = $(toPage);
                 if (nextPage.length < 1) {
                     showPageByHref(toPage, {
                         'animation': animation
@@ -8352,12 +8359,16 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 return false;
             }
         }
-        function hashChange(e) {
+        function hashChangeHandler(e) {
             _debug();
-            if (location.href == hist[1].href) {
-                goBack();
+            if (hist[1] === undefined) {
+                _debug('There is no previous page in history');
             } else {
-                _debug(location.href+' == '+hist[1].href);
+                if(location.hash === hist[1].hash) {
+                    goBack();
+                } else {
+                    _debug(location.hash + ' !== ' + hist[1].hash);
+                }
             }
         }
         function init(options) {
@@ -8421,7 +8432,10 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                     $node.attr('id', 'page-' + (++newPageCount));
                 }
 
-		        $body.trigger('pageInserted', {page: $node.appendTo($body)});
+                // Remove any existing instance
+                $('#' + $node.attr('id')).remove();
+
+                $body.trigger('pageInserted', {page: $node.appendTo($body)});
 
                 if ($node.hasClass('current') || !targetPage) {
                     targetPage = $node;
@@ -8449,25 +8463,17 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
         function setHash(hash) {
             _debug();
 
-            return; // Deactivated at the moment
-
-            // trim leading # if need be
+            // Trim leading # if need be
             hash = hash.replace(/^#/, ''),
 
-            // remove listener
-            // window.removeEventListener('hashchange', hashChange, false);
+            // Remove listener
             window.onhashchange = null;
 
-            // change hash
-            if (hash === initialPageId) {
-                location.href = location.href.split('#')[0];
-            } else {
-                location.hash = '#' + hash;
-            }
+            // Change hash
+            location.hash = '#' + hash;
 
-            // add listener
-            // window.addEventListener('hashchange', hashChange, false);
-            window.onhashchange = hashChange;
+            // Add listener
+            window.onhashchange = hashChangeHandler;
 
         }
         function showPageByHref(href, options) {
@@ -8512,7 +8518,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 settings.$referrer.unselect();
             }
         }
-        function submitForm(e, callback) {
+        function submitHandler(e, callback) {
             _debug();
 
             $(':focus').blur();
@@ -8563,7 +8569,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             _debug();
 
             // If dev wants fast touch off, shut off touch whether device supports it or not
-            if (!jQTSettings.useTouch) {
+            if (!jQTSettings.useFastTouch) {
                 return false
             }
 
@@ -8637,6 +8643,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             if ($el.isExternalLink()) {
                 $el.unselect();
                 return true;
+
             } else if ($el.is(jQTSettings.backSelector)) {
                 // User clicked or tapped a back button
                 goBack(hash);
@@ -8816,7 +8823,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             // Define public jQuery functions
             $.fn.isExternalLink = function() {
                 var $el = $(this);
-                return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('input[type="checkbox"], input[type="radio"], a[href^="http://maps.google.com"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]'));
+                return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('a[href^="http://maps.google.com"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]'));
             }
             $.fn.makeActive = function() {
                 return $(this).addClass('active');
@@ -8879,8 +8886,8 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 addAnimation(animation);
             }
 
-            // I'm not so sure about this stuff...
-            touchSelectors.push('input');
+            // Create an array of stuff that needs touch event handling
+            touchSelectors.push('input'); // TODO: Ask DK why inputs are considered touch selectors
             touchSelectors.push(jQTSettings.touchSelector);
             touchSelectors.push(jQTSettings.backSelector);
             touchSelectors.push(jQTSettings.submitSelector);
@@ -8889,7 +8896,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             // Make sure we have a jqt element
             $body = $('#jqt');
             if ($body.length === 0) {
-                console.warn('Could not find an element with the id "jqt", so the body id has been set to "jqt". This might cause problems, so you should prolly wrap your panels in a div with the id "jqt".');
+                console.warn('Could not find an element with the id "jqt", so the body id has been set to "jqt". If you are having any problems, wrapping your panels in a div with the id "jqt" might help.');
                 $body = $('body').attr('id', 'jqt');
             }
 
@@ -8902,57 +8909,14 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 $body.addClass(jQTSettings.fullScreenClass + ' ' + jQTSettings.statusBar);
             }
 
-//            // Bind events
-//            if ($.support.touch) {
-//                //$body.bind('touchstart', touchStartHandler);
-//                $('body').bind('touchstart', touchStartHandler);
-//                //$body.bind('click', function(){return false});
-//                $('body').bind('click', function(){alert('dsfsd');return false});
-//            } else {
-//                //$body.bind('click', clickHandler);
-//                $('body').bind('click', clickHandler);
-//            }
-//            //$body.bind('mousedown', mousedownHandler);
-//            $('body').bind('mousedown', mousedownHandler);
-//            //$body.bind('orientationchange', orientationChangeHandler);
-//            $('body').bind('orientationchange', orientationChangeHandler);
-//            //$body.bind('submit', submitForm);
-//            $('body').bind('submit', submitForm);
-//            //$body.bind('tap', tapHandler);
-//            $('body').bind('tap', tapHandler);
-//            //$body.trigger('orientationchange');
-//            $('body').trigger('orientationchange');
-
-
-// Bind events
+            // Bind events
             $('body').bind('touchstart', touchStartHandler)
                 .bind('click', clickHandler)
                 .bind('mousedown', mousedownHandler)
                 .bind('orientationchange', orientationChangeHandler)
-                .bind('submit', submitForm)
+                .bind('submit', submitHandler)
                 .bind('tap', tapHandler)
                 .trigger('orientationchange');
-
-/*
-            if (jQTSettings.useTouch && $.support.touch) {
-                $body.click(function(e) {
-                    // _debug('click called');
-                    var timeDiff = (new Date()).getTime() - lastAnimationTime;
-                    if (timeDiff > tapBuffer) {
-                        var $el = $(e.target);
-
-                        if ($el.attr('nodeName')!=='A' && $el.attr('nodeName')!=='AREA' && $el.attr('nodeName')!=='INPUT') {
-                            $el = $el.closest('a, area');
-                        }
-
-                        if ($el.isExternalLink()) {
-                            return true;
-                        }
-                    }
-                    return false;
-                });
-            }
-*/
 
             // Normalize href
             if (location.hash.length) {
@@ -8969,10 +8933,15 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
 
             // Go to the top of the "current" page
             $(currentPage).addClass('current');
-            setHash($(currentPage).attr('id'));
             initialPageId = $(currentPage).attr('id');
+            if(history.replaceState !== undefined) {
+                history.replaceState(null, null, '#' + initialPageId);
+            } else {
+                setHash(initialPageId);
+            }
             addPageToHistory(currentPage);
             scrollTo(0, 0);
+
         });
 
         // Expose public methods and properties
@@ -8985,7 +8954,7 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             goBack: goBack,
             goTo: goTo,
             addAnimation: addAnimation,
-            submitForm: submitForm,
+            submitForm: submitHandler,
             tapHandler: tapHandler
         }
         return publicObj;
@@ -10420,8 +10389,6 @@ var jQT = new $.jQTouch({
 function setCard(id) {
     if (app.data.length > 0) {
       var c = $('div#' + id + ' div.content');
-      alert(app.data)
-      alert(app.data[Math.floor(Math.random()*app.data.length)])
       content = app.data[Math.floor(Math.random()*app.data.length)].card.content;
       c.html(content);
     }
