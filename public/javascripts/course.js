@@ -19,8 +19,6 @@ var jQT = new $.jQTouch({
 function setCard(id) {
     if (app.data.length > 0) {
       var c = $('div#' + id + ' div.content');
-      alert(app.data)
-      alert(app.data[Math.floor(Math.random()*app.data.length)])
       content = app.data[Math.floor(Math.random()*app.data.length)].card.content;
       c.html(content);
     }
