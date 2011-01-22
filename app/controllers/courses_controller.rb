@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.limit(25)
+    @courses = Course.limit(25).order("updated_at desc")
     respond_to do |format|
       format.html
       format.json {render :json=> Course.all.to_json(:only=>[:id,:title])}
