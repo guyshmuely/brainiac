@@ -1,10 +1,10 @@
 CACHE MANIFEST
-#14
+#15
 
 javascripts/cached/course.js
 stylesheets/cached/course.css
-#stylesheets/client/home.css
-#stylesheets/client/about.css
+# stylesheets/client/home.css
+# stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
 images/client/jqtouch/themes/apple/backButton.png
@@ -18,6 +18,12 @@ images/client/no.png
 images/client/next.png
 images/client/play.png
 
-
 NETWORK:
 http://s3.amazonaws.com/brainiac/images/
+
+
+# FALLBACK:
+# /a /b
+#
+
+# CACHE:
