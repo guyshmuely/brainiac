@@ -1,10 +1,10 @@
 CACHE MANIFEST
-#13
+#14
 
 javascripts/cached/course.js
 stylesheets/cached/course.css
-stylesheets/client/home.css
-stylesheets/client/about.css
+#stylesheets/client/home.css
+#stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
 images/client/jqtouch/themes/apple/backButton.png
@@ -13,6 +13,10 @@ images/client/jqtouch/themes/apple/activeButton.png
 images/client/jqtouch/themes/apple/toolButton.png
 images/client/jqtouch/themes/apple/pinstripes.png
 images/client/jqtouch/themes/apple/toolbar.png
+images/client/yes.png
+images/client/no.png
+images/client/next.png
+
 
 NETWORK:
 http://s3.amazonaws.com/brainiac/images/
