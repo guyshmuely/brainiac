@@ -4,7 +4,7 @@
       %div.price
         =course.price==0 ? 'FREE' : raw("&#8362; #{course.price}")
       %div.picture
-        =image_tag course.image.url(:thumb) if course.image.file?
+        =image_tag course.icon.url(:thumb) if course.icon.file?
       %div.creator
         Guy shmuely
       %div.title

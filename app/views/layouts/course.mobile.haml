@@ -8,11 +8,13 @@
     //%link{:rel=>"apple-touch-icon", :href=>icon}
     //%link{:rel=>"apple-touch-startup-image", :href=>"/images/client/apple-touch-startup.jpg"}
     %title
-      =@course.title
+      =@course.display_name
     =stylesheet_link_tag 'client/jqtouch/jqtouch' , 'client/jqtouch/themes/apple','client/course', :cache => 'cached/course'
-    - icon_path = @course.image.file? ? @course.image.url(:thumb) : '/images/client/apple-touch-icon.png'
+    - icon_path = @course.icon.file? ? @course.icon.url(:thumb) : '/images/client/apple-touch-icon.png'
+    - image_path = @course.image.file? ? @course.image.url : '/images/client/apple-touch-startup.jpg'
     :javascript
       var icon_path = "#{icon_path}";
+      var image_path = "#{image_path}";
       var course_id = "#{@course.id}";
     =javascript_include_tag :defaults, :jqtouch, 'iscroll', 'bookmark_bubble', 'course', :cache => 'cached/course'
     =yield :head

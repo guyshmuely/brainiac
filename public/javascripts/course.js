@@ -1,7 +1,7 @@
 var jQT = new $.jQTouch({
   icon: icon_path,
   addGlossToIcon: true,
-  //startupScreen: "/images/client/apple-touch-startup.jpg",
+  startupScreen: image_path,
   statusBar: 'default',
   formSelector: '.form',
   preloadImages: [
@@ -18,21 +18,31 @@ var jQT = new $.jQTouch({
 
 function setCard(id) {
     if (app.data.length > 0) {
-      var c = $('div#' + id + ' div.content');
-      content = app.data[Math.floor(Math.random()*app.data.length)].card.content;
-      c.html(content);
+      var card = app.data[Math.floor(Math.random()*app.data.length)].card
+      $('div#card_' + id + ' div.content').html(card.question);
+      $('div#solution_' + id + ' div.content').html(card.solution);
+      $('div#card_' + id + ' div.content').css({
+        direction: card.question_direction,
+        //left: ($(window).width() - $('div#card_' + id + ' div.content').outerWidth())/2,
+        top: ($(window).height() - $('div#card_' + id + ' div.content').outerHeight())/2
+      });
+      $('div#solution_' + id + ' div.content').css({
+        direction: card.solution_direction,
+        //left: ($(window).width() - $('div#solution_' + id + ' div.content').outerWidth())/2,
+        top: ($(window).height() - $('div#solution_' + id + ' div.content').outerHeight())/2
+      });
+
     }
 }
 
 jQuery(function() {
-    $('#home').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') setCard('card_a');
+    $('#home').bind('pageAnimationEnd',function(e,info) {        
     })
     $('#card_a').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') setCard('card_b');
+        if (info.direction=='in') setCard('b');        
     })    
     $('#card_b').bind('pageAnimationEnd',function(e,info) {
-        if (info.direction=='in') setCard('card_a');
+        if (info.direction=='in') setCard('a');
     })
 })
 
@@ -62,6 +72,7 @@ var app = {
 $(window).load(function() {
     app.getData(function(data) {        
         app.data = data;
+        setCard('a');
     })
 });
 

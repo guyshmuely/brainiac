@@ -1,6 +1,16 @@
 -form_for [:admin,@course], :html => { :multipart => true } do |f|
-  %div=f.text_field :title
+  %div
+    Display name
+    =f.text_field :display_name
+  %div
+    Title
+    =f.text_field :title
   %div
     =f.text_field :price    
-  %div=f.file_field :image
+  %div
+    Icon
+    =f.file_field :icon
+  %div
+    Image
+    =f.file_field :image
   %div=f.submit 'Submit'

@@ -1,4 +1,49 @@
 #jqt div.main {
-  padding: 5px; }
+  padding: 20px 10px; }
+  #jqt div.main div.content {
+    text-align: center;
+    margin-top: -50px;
+    position: absolute;
+    width: 100%;
+    direction: rtl;
+    font-size: 14pt; }
+  #jqt div.main div.header {
+    height: 70px; }
+    #jqt div.main div.header a.price {
+      margin-top: 20px;
+      margin-right: 0px;
+      float: right; }
+    #jqt div.main div.header div.picture {
+      float: left;
+      width: 57px;
+      height: 57px;
+      overflow: hidden;
+      margin-left: 5px;
+      margin-right: 20px;
+      -webkit-box-shadow: 0px 1px 5px #545456;
+      border-radius: 10px; }
+    #jqt div.main div.header div.creator {
+      font-size: 10pt;
+      color: #3a3a3a; }
+    #jqt div.main div.header div.title {
+      font-size: 12pt;
+      color: black; }
+  #jqt div.main div.description {
+    padding: 0px 5px;
+    padding-bottom: 80px; }
+  #jqt div.main a.next, #jqt div.main a.play, #jqt div.main a.yes, #jqt div.main a.no {
+    width: 100px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right; }
+    #jqt div.main a.next img, #jqt div.main a.play img, #jqt div.main a.yes img, #jqt div.main a.no img {
+      border: 10px solid transparent; }
+    #jqt div.main a.next:active img, #jqt div.main a.play:active img, #jqt div.main a.yes:active img, #jqt div.main a.no:active img {
+      border: 10px solid black;
+      -webkit-border-radius: 50px; }
+  #jqt div.main a.no {
+    left: 5px;
+    text-align: left; }
   #jqt div.main a.whiteButton.active, #jqt div.main a.whiteButton:active {
     -webkit-border-image: url(/images/client/jqtouch/themes/apple/redButton.png) 0 12 0 12; }

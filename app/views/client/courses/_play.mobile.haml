@@ -1,40 +1,40 @@
 %div#card_a.selectable
   %div.toolbar
     %h1
-      Card A
+      Question?
     =link_to 'Finish','#home', :class=>"button slidedown"
   %div.main
-    %strong
-      Card A
     %div.content
-    =link_to 'Next','#card_b', :class=>"whiteButton slideleft"
+    =link_to image_tag('/images/client/next.png'),'#solution_a', :class=>"slideleft next"
 
 
 %div#solution_a.selectable
   %div.toolbar
     %h1
-      Solution A
+      Solution
+    =link_to 'back',nil, :class=>"back"
     =link_to 'Finish','#home', :class=>"button slidedown"
   %div.main
-    %strong
-      Solution A
+    %div.content
+    =link_to image_tag('/images/client/yes.png'),'#card_b', :class=>"slideleft yes"
+    =link_to image_tag('/images/client/no.png'),'#card_b', :class=>"slideleft no"
 
 %div#card_b.selectable
   %div.toolbar
     %h1
-      Card B
+      Question?
     =link_to 'Finish','#home', :class=>"button slidedown"
   %div.main
-    %strong
-      Card B
     %div.content
-    =link_to 'Next','#card_a', :class=>"whiteButton slideleft"
+    =link_to image_tag('/images/client/next.png'),'#solution_b', :class=>"slideleft next"
 
 %div#solution_b.selectable
   %div.toolbar
     %h1
-      Solution A
+      Solution
+    =link_to 'back',nil, :class=>"back"
     =link_to 'Finish','#home', :class=>"button slidedown"
   %div.main
-    %strong
-      Solution A
+    %div.content
+    =link_to image_tag('/images/client/yes.png'),'#card_a', :class=>"slideleft yes"
+    =link_to image_tag('/images/client/no.png'),'#card_a', :class=>"slideleft no"

@@ -4,9 +4,17 @@
   %div.toolbar
     //=link_to "Back", nil, :class => "back"
     %h1
-      Course
+      =@course.title
   %div.main
-    =@course.title
-    =link_to 'Start','#card_a', :class=>"whiteButton slideup"
+    %div.header
+      %div.picture
+        =image_tag @course.icon.url(:thumb) if @course.icon.file?
+      %div.creator
+        Guy shmuely
+      %div.title
+        =@course.title
+    %div.description
+      =@course.description
+    =link_to image_tag('/images/client/play.png'),'#card_a', :class=>"slideleft play"
 
 =render :partial=>"play"

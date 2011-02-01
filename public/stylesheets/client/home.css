@@ -14,25 +14,32 @@
   overflow-y: scroll; }
   #jqt div.main div.scroller div.course {
     padding: 20px 10px; }
-    #jqt div.main div.scroller div.course a.price {
-      margin-top: 20px;
-      margin-right: 0px;
-      float: right; }
-    #jqt div.main div.scroller div.course div.picture {
-      float: left;
-      width: 57px;
-      height: 57px;
-      overflow: hidden;
-      margin-left: 5px;
-      margin-right: 20px;
-      -webkit-box-shadow: 0px 1px 5px #545456;
-      border-radius: 10px; }
-    #jqt div.main div.scroller div.course div.creator {
-      font-size: 10pt;
-      color: #3a3a3a; }
-    #jqt div.main div.scroller div.course div.title {
-      font-size: 12pt;
-      color: black; }
+    #jqt div.main div.scroller div.course div.header {
+      height: 70px; }
+      #jqt div.main div.scroller div.course div.header a.price {
+        margin-top: 20px;
+        margin-right: 10px;
+        float: right; }
+      #jqt div.main div.scroller div.course div.header div.picture {
+        float: left;
+        width: 57px;
+        height: 57px;
+        overflow: hidden;
+        margin-left: 5px;
+        margin-right: 20px;
+        -webkit-box-shadow: 0px 1px 5px #545456;
+        border-radius: 10px; }
+      #jqt div.main div.scroller div.course div.header div.creator {
+        font-size: 10pt;
+        color: #3a3a3a; }
+      #jqt div.main div.scroller div.course div.header div.title {
+        font-size: 12pt;
+        color: black;
+        width: 140px;
+        margin-left: 80px;
+        white-space: normal; }
+    #jqt div.main div.scroller div.course div.description {
+      padding: 0px 5px; }
   #jqt div.main div.scroller ul {
     margin: 0px;
     border: 0px solid; }
@@ -64,7 +71,10 @@
         color: #3a3a3a; }
       #jqt div.main div.scroller ul li div.title {
         font-size: 12pt;
-        color: black; }
+        color: black;
+        width: 120px;
+        margin-left: 80px;
+        white-space: normal; }
       #jqt div.main div.scroller ul li.odd {
         background-color: #98989c;
         border-bottom: 1px solid #898a8d; }
@@ -94,17 +104,17 @@ div.bar {
     line-height: 80px;
     background-position: center top;
     background-repeat: no-repeat; }
-    div.bar a.selected, div.bar a:hover {
+    div.bar a.selected, div.bar a:active {
       color: white; }
-      div.bar a.selected.top, div.bar a:hover.top {
+      div.bar a.selected.top, div.bar a:active.top {
         background-image: url("/images/client/top_selected.png"); }
-      div.bar a.selected.featured, div.bar a:hover.featured {
+      div.bar a.selected.featured, div.bar a:active.featured {
         background-image: url("/images/client/featured_selected.png"); }
-      div.bar a.selected.categories, div.bar a:hover.categories {
+      div.bar a.selected.categories, div.bar a:active.categories {
         background-image: url("/images/client/categories_selected.png"); }
-      div.bar a.selected.search, div.bar a:hover.search {
+      div.bar a.selected.search, div.bar a:active.search {
         background-image: url("/images/client/search_selected.png"); }
-      div.bar a.selected.downloads, div.bar a:hover.downloads {
+      div.bar a.selected.downloads, div.bar a:active.downloads {
         background-image: url("/images/client/downloads_selected.png"); }
     div.bar a.top {
       background-image: url("/images/client/top.png"); }

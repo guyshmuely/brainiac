@@ -1,3 +1,16 @@
 -form_for [:admin, @course, @card], :html => { :multipart => true } do |f|
-  %div=f.text_field :content
+  %div
+    Question:
+    =f.text_field :question
+    rtl
+    =f.radio_button :question_direction, 'rtl'
+    ltr
+    =f.radio_button :question_direction, 'ltr'
+  %div
+    Solution:
+    =f.text_field :solution
+    rtl
+    =f.radio_button :solution_direction, 'rtl'
+    ltr
+    =f.radio_button :solution_direction, 'ltr'
   %div=f.submit 'Save'

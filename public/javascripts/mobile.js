@@ -20,7 +20,7 @@ function selectBarLink(element) {
 }
 
 function activateScroller(id) {    
-        var scroller = $('#' + id + ' div.scroller')[0];
+        var scroller = $('div#' + id + ' div.scroller')[0];
         if (!$(scroller).hasClass('iscrollActive')) {
             $(scroller).addClass("iscrollActive")
             scroller.addEventListener('touchmove', function(e) {e.preventDefault();},false);

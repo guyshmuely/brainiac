@@ -1,5 +1,58 @@
 #jqt
   div.main
-    padding: 5px
+    padding: 20px 10px
+    div.content
+      text-align: center
+      margin-top: -50px
+      position: absolute
+      width: 100%
+      direction: rtl
+      font-size: 14pt
+    div.header
+      height: 70px
+      a.price
+        //font-size: 11pt
+        margin-top: 20px
+        margin-right: 0px
+        float: right
+        //padding-right: 30px
+        //height: 23px
+
+
+      div.picture
+        float: left
+        width: 57px
+        height: 57px
+        overflow: hidden
+        margin-left: 5px
+        margin-right: 20px
+        -webkit-box-shadow: 0px 1px 5px #545456
+        border-radius: 10px
+      div.creator
+        font-size: 10pt
+        color: #3a3a3a
+      div.title
+        font-size: 12pt
+        color: black
+      //padding: 5px
+    div.description
+      padding: 0px 5px
+      padding-bottom: 80px      
+    a
+      &.next, &.play, &.yes, &.no        
+        width: 100px        
+        position: absolute
+        bottom: 5px
+        right: 5px
+        text-align: right
+        img
+          border: 10px solid transparent
+        &:active
+          img
+            border: 10px solid black
+            -webkit-border-radius: 50px
+      &.no
+        left: 5px
+        text-align: left
     a.whiteButton.active, a.whiteButton:active
       -webkit-border-image: url(/images/client/jqtouch/themes/apple/redButton.png) 0 12 0 12

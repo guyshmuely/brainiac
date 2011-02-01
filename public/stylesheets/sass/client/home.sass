@@ -16,32 +16,35 @@
     div.scroller
       div.course
         padding: 20px 10px
-        a.price
-          //font-size: 11pt
-          margin-top: 20px
-          margin-right: 0px
-          float: right
-          //padding-right: 30px
-          //height: 23px
-
-
-        div.picture
-          float: left
-          width: 57px
-          height: 57px
-          overflow: hidden
-          margin-left: 5px
-          margin-right: 20px
-          -webkit-box-shadow: 0px 1px 5px #545456
-          border-radius: 10px
-        div.creator
-          font-size: 10pt
-          color: #3a3a3a
-        div.title
-          font-size: 12pt
-          color: black
-
-
+        div.header
+          height: 70px
+          a.price
+            //font-size: 11pt
+            margin-top: 20px
+            margin-right: 10px
+            float: right
+            //padding-right: 30px
+            //height: 23px
+          div.picture
+            float: left
+            width: 57px
+            height: 57px
+            overflow: hidden
+            margin-left: 5px
+            margin-right: 20px
+            -webkit-box-shadow: 0px 1px 5px #545456
+            border-radius: 10px
+          div.creator
+            font-size: 10pt
+            color: #3a3a3a
+          div.title
+            font-size: 12pt
+            color: black
+            width: 140px
+            margin-left: 80px
+            white-space: normal
+        div.description
+          padding: 0px 5px          
       ul
         margin: 0px
         border: 0px solid
@@ -73,7 +76,10 @@
             color: #3a3a3a            
           div.title
             font-size: 12pt
-            color: black
+            color: black            
+            width: 120px
+            margin-left: 80px
+            white-space: normal
           &.odd
             background-color: #98989c
             border-bottom: 1px solid #898a8d
@@ -102,7 +108,7 @@ div.bar
     line-height: 80px
     background-position:  center top
     background-repeat:  no-repeat
-    &.selected , &:hover
+    &.selected , &:active
       color: white
       &.top
         background-image: url('/images/client/top_selected.png')

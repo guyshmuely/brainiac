@@ -1,16 +1,25 @@
 %div.selectable{:id=>"course_#{@course.id}"}
   %div.toolbar
     =link_to "Back", nil, :class => "back"
-    %h1
-      Course
+    %h1{:style=>"width: 150px"}
+      =@course.title
   %div.main
     %div.scroller
       %div.course
-        =link_to @course.price==0 ? 'FREE' : raw("&#8362; #{@course.price}"), |
-                 client_course_url(@course), :class=>'price button', :target=>"_blank" |
-        %div.picture
-          =image_tag @course.image.url(:thumb) if @course.image.file?
-        %div.creator
-          Guy shmuely
-        %div.title
-          =@course.title
+        %div.header
+          =link_to @course.price==0 ? 'FREE' : raw("&#8362; #{@course.price}"), |
+                   client_course_url(@course), :class=>'price button', :target=>"_blank" |
+          %div.picture
+            =image_tag @course.icon.url(:thumb) if @course.icon.file?
+          %div.creator
+            Guy shmuely
+          %div.title
+            =@course.title
+        %div.description
+          =@course.description
+  :javascript    
+    $("div#course_#{@course.id}").bind('pageAnimationEnd',function(e,info) {
+          if (info.direction=='in') {
+            activateScroller("course_#{@course.id}");
+          }
+    })
