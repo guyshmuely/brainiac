@@ -158,3 +158,9 @@ $(window).load(function() {
     bubble.showIfAllowed();
   }, 1000);
 });
+
+$(function() {
+  $(window.applicationCache).bind("error", function() {
+    alert("There was an error when loading the cache manifest.");
+  });
+});

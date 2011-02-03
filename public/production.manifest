@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Rev 12
+# Rev 13
 
 # /index.html
 # /jqtouch/jqtouch/jqtouch.min.css
@@ -37,6 +37,7 @@ images/client/top_selected.png
 
 NETWORK:
 http://s3.amazonaws.com/brainiac/images/
+http://s3.amazonaws.com/brainiac/icons/
 images/client/under_construction.jpg
 images/client/guy.jpg
 images/client/hagit.jpg
