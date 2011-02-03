@@ -9777,7 +9777,7 @@ function selectBarLink(element) {
 }
 
 function activateScroller(id) {    
-        var scroller = $('#' + id + ' div.scroller')[0];
+        var scroller = $('div#' + id + ' div.scroller')[0];
         if (!$(scroller).hasClass('iscrollActive')) {
             $(scroller).addClass("iscrollActive")
             scroller.addEventListener('touchmove', function(e) {e.preventDefault();},false);
@@ -9850,6 +9850,12 @@ var app = {
     });
   }
 };
+
+$(function() {
+  $(window.applicationCache).bind("error", function() {
+    alert("There was an error when loading the cache manifest.");
+  });
+});
 
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
