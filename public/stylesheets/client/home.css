@@ -39,7 +39,8 @@
         margin-left: 80px;
         white-space: normal; }
     #jqt div.main div.scroller div.course div.description {
-      padding: 0px 5px; }
+      padding: 0px 5px;
+      direction: rtl; }
   #jqt div.main div.scroller ul {
     margin: 0px;
     border: 0px solid; }
