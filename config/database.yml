@@ -1,12 +1,19 @@
+#development:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: brainiac_development
+#  pool: 5
+#  username: brainiac
+#  password: brainiac4all
+#  host: 127.0.0.1
+#  timeout: 5000
+
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql
   database: brainiac_development
-  pool: 5
   username: brainiac
   password: brainiac4all
-  host: 127.0.0.1
-  timeout: 5000
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
