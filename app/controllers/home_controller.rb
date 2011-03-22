@@ -4,4 +4,16 @@ class HomeController < ApplicationController
     
   end
 
+  def why
+
+  end
+
+  def tech
+    
+  end
+
+  def contact
+
+  end
+
 end

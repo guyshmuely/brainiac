@@ -1,1 +1,24 @@
-Welcome to the brainiac project
+%div#iphone
+  =image_tag '/images/iphone_4_screen.jpg', :id=>'screen1'
+  %div#switches
+    =link_to_function '', nil, :id=>'screen1', :class=>'bullet'
+    =link_to_function '', nil, :id=>'screen2', :class=>'bullet'
+    =link_to_function '', nil, :id=>'screen3', :class=>'bullet current'
+
+%div#mantra
+  %h1 What is "Brainiac"?
+  %h2 Something briliant.
+  %h3 because it's easy, productive and fun!
+  %ul#start.menu
+    %li.current
+      =image_tag '/images/right_arrow.png'
+      =link_to nil do
+        %span Start now
+        %br
+        using brainiac!
+%div#content
+  %h1 What is "Brainiac"?
+  %p The Brainiac project is an online course store.
+  %p The idea is to have a course for almost every subject, with a special algorithem behind the scene.
+  %p Our app will practically inject your brain the course's content in no time!!!
+  %br

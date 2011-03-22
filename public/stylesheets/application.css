@@ -1,0 +1,112 @@
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 15px;
+  line-height: 150%;
+  color: white;
+  background: #4a4a4a url(/images/layout/BG.jpg) repeat-x 0px -1px;
+  margin: 0px; }
+  body ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none; }
+  body a {
+    text-decoration: none; }
+  body img {
+    border: 0px solid; }
+  body #wrapper {
+    min-height: 600px;
+    width: 980px;
+    margin: 0px auto;
+    background: url(/images/layout/BG-header.jpg) top no-repeat; }
+    body #wrapper #header ul.menu {
+      float: right; }
+    body #wrapper ul.menu {
+      line-height: 110%;
+      margin-top: 20px; }
+      body #wrapper ul.menu li {
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 10px;
+        float: left;
+        margin: 0px 10px;
+        width: 100px;
+        height: 43px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        font-weight: bold; }
+        body #wrapper ul.menu li a {
+          color: gray;
+          font-size: 12px; }
+          body #wrapper ul.menu li a span {
+            color: #1e90ff;
+            font-size: 20px; }
+        body #wrapper ul.menu li:hover, body #wrapper ul.menu li.current {
+          background-color: white; }
+          body #wrapper ul.menu li:hover a, body #wrapper ul.menu li.current a {
+            color: gray; }
+    body #wrapper #iphone {
+      clear: right;
+      float: right;
+      background: url(/images/iphone.png) no-repeat;
+      margin-right: 100px;
+      margin-top: 60px;
+      width: 280px;
+      height: 520px; }
+      body #wrapper #iphone img#screen1 {
+        margin-left: 42px;
+        margin-top: 84px; }
+      body #wrapper #iphone #switches {
+        margin: 0px auto;
+        margin-top: 90px;
+        width: 80px; }
+        body #wrapper #iphone #switches a.bullet {
+          margin: 0px 5px;
+          float: right;
+          background-image: url("/images/bullet.png");
+          width: 12px;
+          height: 13px; }
+          body #wrapper #iphone #switches a.bullet:hover, body #wrapper #iphone #switches a.bullet.current {
+            background-image: url("/images/bullet_hover.png"); }
+    body #wrapper #mantra {
+      margin-left: 100px;
+      padding-top: 220px;
+      color: white;
+      height: 300px; }
+      body #wrapper #mantra h1, body #wrapper #mantra h2, body #wrapper #mantra h3 {
+        margin: 0px; }
+      body #wrapper #mantra h1 {
+        font-size: 40px;
+        padding-bottom: 20px; }
+      body #wrapper #mantra h2 {
+        color: #4a4a4a;
+        font-size: 30px;
+        padding-bottom: 15px; }
+      body #wrapper #mantra h3 {
+        font-size: 20px; }
+      body #wrapper #mantra #start {
+        margin-top: 40px;
+        margin-left: -10px; }
+        body #wrapper #mantra #start li.current {
+          width: 200px;
+          padding-left: 10px; }
+          body #wrapper #mantra #start li.current img {
+            float: right;
+            margin-right: 20px; }
+          body #wrapper #mantra #start li.current a {
+            text-align: left;
+            padding-top: 0px; }
+    body #wrapper #content {
+      line-height: 80%;
+      margin: 65px 0px 100px 100px; }
+      body #wrapper #content h1 {
+        color: #ccdee9;
+        font-size: 25px;
+        padding-bottom: 0px;
+        padding-left: 0px; }
+      body #wrapper #content p {
+        font-size: 18px;
+        margin-bottom: 0px; }
+  body #footer {
+    height: 150px;
+    background: url(/images/layout/BG-footer.jpg) repeat-x top #445866;
+    margin-top: 50px; }

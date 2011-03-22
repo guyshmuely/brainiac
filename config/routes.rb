@@ -1,6 +1,10 @@
 Brainiac::Application.routes.draw do
 
   root :to => "home#index"
+  match 'why' => 'home#why'
+  match 'tech' => 'home#tech'
+  match 'contact' => 'home#contact'
+
   resources :courses
 
   namespace 'admin' do
