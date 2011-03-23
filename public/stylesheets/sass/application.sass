@@ -3,7 +3,7 @@ body
   font-size: 15px
   line-height: 150%
   color: #FFF
-  background: #4a4a4a url(/images/layout/BG.jpg) repeat-x 0px -1px
+  background: #4a4a4a url(/images/layout/BG.jpg) repeat-x 0px -200px
   margin: 0px
   ul
     margin: 0px
@@ -13,11 +13,20 @@ body
     text-decoration: none
   img
     border: 0px solid
+  &.big
+    background-position: 0px -1px
+    #wrapper
+      background-position: 0px -1px
+      #mantra
+        margin-top: 220px
+        height: 300px
+        #start
+          margin-top: 40px
   #wrapper
-    min-height: 600px
+    min-height: 500px
     width: 980px
     margin: 0px auto
-    background: url(/images/layout/BG-header.jpg) top no-repeat
+    background: url(/images/layout/BG-header.jpg) -200 no-repeat
     #header
       ul.menu
         float: right
@@ -71,9 +80,9 @@ body
             background-image: url('/images/bullet_hover.png')
     #mantra
       margin-left: 100px
-      padding-top: 220px
+      margin-top: 130px
       color: white
-      height: 300px
+      height: 180px
       h1, h2, h3
         margin: 0px
       h1
@@ -83,10 +92,11 @@ body
         color: #4a4a4a
         font-size: 30px
         padding-bottom: 15px
+        text-shadow: 1px 1px 1px white
       h3
         font-size: 20px
       #start
-        margin-top: 40px
+        margin-top: 20px
         margin-left: -10px
         li.current
           width: 200px
@@ -98,8 +108,8 @@ body
             text-align: left
             padding-top: 0px
     #content
-      line-height: 80%
-      margin: 65px 0px 100px 100px
+      margin: 40px 0px 100px 100px
+      line-height: 170%
       h1
         color: #CCDEE9
         font-size: 25px

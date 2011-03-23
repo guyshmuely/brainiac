@@ -6,7 +6,7 @@
     =javascript_include_tag :defaults, :jqtouch
     =yield :head
     =csrf_meta_tag
-  %body
+  %body{:class=>controller.action_name=='index' ? 'big' : nil}
     %div#wrapper      
       %div#header
         =link_to 'homepage', root_path
