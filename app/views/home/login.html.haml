@@ -1,0 +1,24 @@
+=stylesheet_link_tag 'login_page'
+%div#mantra
+  %div#new_user
+    %h1 New User? Sign Up!
+    %div#form_new
+      =image_tag '/images/user.png'
+      %ul#start.menu
+        %li.current
+          =image_tag '/images/right_arrow.png'
+          =link_to nil do
+            %span Signup
+            %br
+            to braniac
+  %div#exist_user
+    %h1 Existing User? Login!
+    %div#form_exist
+      %ul#start.menu
+        %li.current
+          =image_tag '/images/right_arrow.png'
+          =link_to nil do
+            %span Login
+            %br
+            to braniac
+

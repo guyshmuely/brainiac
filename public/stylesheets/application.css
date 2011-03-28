@@ -62,12 +62,13 @@ body {
           color: gray;
           font-size: 12px; }
           body #wrapper ul.menu li a span {
-            color: #1e90ff;
+            color: white;
             font-size: 20px; }
         body #wrapper ul.menu li:hover, body #wrapper ul.menu li.current {
           background-color: white; }
-          body #wrapper ul.menu li:hover a, body #wrapper ul.menu li.current a {
-            color: gray; }
+          body #wrapper ul.menu li:hover span, body #wrapper ul.menu li.current span {
+            color: #1e90ff;
+            font-size: 20px; }
     body #wrapper #iphone {
       clear: right;
       float: right;

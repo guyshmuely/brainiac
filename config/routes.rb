@@ -4,6 +4,7 @@ Brainiac::Application.routes.draw do
   match 'why' => 'home#why'
   match 'tech' => 'home#tech'
   match 'contact' => 'home#contact'
+  match 'login' => 'home#login'
 
   resources :courses
 
