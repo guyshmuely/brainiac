@@ -26,18 +26,18 @@ body {
           body #wrapper #mantra #new_user #form_new img {
             float: left;
             clear: left;
-            margin-left: -140px;
+            margin-left: -160px;
             margin-top: 65px; }
           body #wrapper #mantra #new_user #form_new form {
             margin-top: 20px;
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: bold;
             color: gray; }
             body #wrapper #mantra #new_user #form_new form input {
               -moz-border-radius: 5px;
               border-radius: 5px;
-              height: 20px;
+              height: 15px;
               border: 1px solid gray; }
           body #wrapper #mantra #new_user #form_new #start {
             margin-top: 0px;
@@ -68,14 +68,14 @@ body {
           color: #4a4a4a;
           text-shadow: 1px 1px 1px white; }
         body #wrapper #mantra #exist_user #form_exist form {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          font-size: 18px;
+          margin-top: 41px;
+          margin-bottom: -21px;
+          font-size: 15px;
           font-weight: bold; }
           body #wrapper #mantra #exist_user #form_exist form input {
             -moz-border-radius: 5px;
             border-radius: 5px;
-            height: 20px;
+            height: 15px;
             border: 1px solid gray; }
         body #wrapper #mantra #exist_user #form_exist #start {
           margin-top: 0px;
@@ -83,7 +83,7 @@ body {
           body #wrapper #mantra #exist_user #form_exist #start li.current {
             width: 145px;
             margin-left: 20px;
-            margin-top: 125px;
+            margin-top: 150px;
             border: 1px solid gray; }
             body #wrapper #mantra #exist_user #form_exist #start li.current img {
               float: right;

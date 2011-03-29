@@ -4,6 +4,18 @@
     %h1 New User? Sign Up!
     %div#form_new
       =image_tag '/images/user.png'
+      <form>
+      Email : <input type="text" name="email" />
+      </form>
+      <form>
+      username: <input type="text" name="username" />
+      </form>
+      <form>
+      Password : <input type="password" name="pwd" />
+      </form>
+      <form>
+      Re-enter Password : <input type="password" name="pwd1" />
+      </form>
       %ul#start.menu
         %li.current
           =image_tag '/images/right_arrow.png'
@@ -14,6 +26,12 @@
   %div#exist_user
     %h1 Existing User? Login!
     %div#form_exist
+      <form>
+      Username: <input type="text" name="username" />
+      </form>
+      <form>
+      Password : <input type="password" name="pwd" />
+      </form>
       %ul#start.menu
         %li.current
           =image_tag '/images/right_arrow.png'
