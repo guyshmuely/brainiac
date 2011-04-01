@@ -1,0 +1,11 @@
+-content_for :head, stylesheet_link_tag('devise')
+%div#mantra
+  %div#new_user
+    %h1 New User? Sign Up!
+    %div#form_new
+      =image_tag '/images/user.png'
+      =render '/devise/registrations/form', :resource=>resource
+  %div#exist_user
+    %h1 Existing User? Login!
+    %div#form_exist
+      =render '/devise/sessions/form', :resource=>Account.new

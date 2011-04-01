@@ -1,4 +1,4 @@
-class Admin::CardsController < ApplicationController
+class Admin::CardsController < Admin::AdminController
 
   def index
     @course = Course.find(params[:course_id])

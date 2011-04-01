@@ -1,6 +1,9 @@
 Brainiac::Application.routes.draw do
 
+  devise_for :accounts
+
   root :to => "home#index"
+  match 'admin/dashboard' => 'admin/admin#dashboard', :as => 'account_root'
   match 'why' => 'home#why'
   match 'tech' => 'home#tech'
   match 'contact' => 'home#contact'
