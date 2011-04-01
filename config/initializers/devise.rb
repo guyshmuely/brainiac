@@ -63,17 +63,17 @@ Devise.setup do |config|
   # You can use this to let your user access some features of your application
   # without confirming the account, but blocking it after a certain period
   # (ie 2 days).
-  # config.confirm_within = 2.days
+  config.confirm_within = 7.days
 
   # Defines which key will be used when confirming an account
-  # config.confirmation_keys = [ :email ]
+  config.confirmation_keys = [ :email ]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # If true, a valid remember token can be re-used between multiple browsers.
-  # config.remember_across_browsers = true
+  config.remember_across_browsers = true
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
@@ -87,12 +87,12 @@ Devise.setup do |config|
   # config.password_length = 6..20
 
   # Regex to use to validate the email address
-  # config.email_regexp = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  config.email_regexp = /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 60.minutes
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
@@ -120,7 +120,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  # config.reset_password_keys = [ :email ]
+  config.reset_password_keys = [ :email ]
 
   # ==> Configuration for :encryptable
   # Allow you to use another encryption algorithm besides bcrypt (default). You can use
@@ -128,11 +128,11 @@ Devise.setup do |config|
   # :authlogic_sha512 (then you should set stretches above to 20 for default behavior)
   # and :restful_authentication_sha1 (then you should set stretches to 10, and copy
   # REST_AUTH_SITE_KEY to pepper)
-  # config.encryptor = :sha512
+  config.encryptor = :sha512
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
-  # config.token_authentication_key = :auth_token
+  config.token_authentication_key = :auth_token
 
   # If true, authentication through token does not store user in session and needs
   # to be supplied on each request. Useful if you are using the token as API token.
@@ -163,7 +163,7 @@ Devise.setup do |config|
   #
   # The :"*/*" and "*/*" formats below is required to match Internet
   # Explorer requests.
-  # config.navigational_formats = [:"*/*", "*/*", :html]
+  config.navigational_formats = [:"*/*", "*/*", :html, :mobile]
 
   # The default HTTP method used to sign out a resource. Default is :get.
   # config.sign_out_via = :get
