@@ -23,7 +23,7 @@ gem 'capistrano'
 gem 'aws-s3'
 gem 'haml', '>=3.0.12'
 gem 'paperclip', '>=2.3.6'
-gem 'devise'
+gem 'devise' , '>=1.2.1'
 gem 'omniauth', '>=0.2.0'
 # gem 'bj'
 # gem 'nokogiri'
@@ -36,3 +36,6 @@ gem 'omniauth', '>=0.2.0'
 # group :development, :test do
 #   gem 'webrat'
 # end
+group :development do
+   gem 'mongrel'
+end

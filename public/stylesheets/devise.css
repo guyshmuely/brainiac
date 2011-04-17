@@ -14,11 +14,11 @@ body {
         body #wrapper #mantra #new_user h1 {
           font-size: 30px;
           padding-bottom: 30px;
-          margin-left: 65px;
+          margin-left: 55px;
           width: 300px; }
         body #wrapper #mantra #new_user #form_new {
           height: 300px;
-          width: 420px;
+          width: 410px;
           border: 1px solid gray;
           background-color: white;
           -moz-border-radius: 25px;
@@ -26,7 +26,7 @@ body {
           body #wrapper #mantra #new_user #form_new img {
             float: left;
             clear: left;
-            margin-left: -160px;
+            margin-left: -140px;
             margin-top: 65px; }
           body #wrapper #mantra #new_user #form_new form {
             margin-top: 20px;
@@ -39,6 +39,12 @@ body {
               border-radius: 5px;
               height: 15px;
               border: 1px solid gray; }
+              body #wrapper #mantra #new_user #form_new form input#account_submit {
+                color: black;
+                margin-top: 17px;
+                margin-left: 170px;
+                height: 40px;
+                width: 100px; }
           body #wrapper #mantra #new_user #form_new #start {
             margin-top: 0px;
             margin-left: 200px; }
@@ -77,6 +83,12 @@ body {
             border-radius: 5px;
             height: 15px;
             border: 1px solid gray; }
+            body #wrapper #mantra #exist_user #form_exist form input#account_submit {
+              color: black;
+              margin-top: 43px;
+              margin-left: 250px;
+              height: 40px;
+              width: 100px; }
         body #wrapper #mantra #exist_user #form_exist #start {
           margin-top: 0px;
           margin-left: 200px; }
@@ -92,7 +104,3 @@ body {
             body #wrapper #mantra #exist_user #form_exist #start li.current a {
               text-align: left;
               padding-top: 0px; }
-  body #footer {
-    height: 150px;
-    background: url(/images/layout/BG-footer.jpg) repeat-x top #445866;
-    margin-top: 50px; }
