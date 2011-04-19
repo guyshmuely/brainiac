@@ -2,8 +2,8 @@
 %html
   %head
     %title
-    =stylesheet_link_tag 'application'
-    =javascript_include_tag :defaults, :jqtouch
+    =stylesheet_link_tag 'application', :cache => 'cached/web'
+    =javascript_include_tag :defaults, :jqtouch, :cache => 'cached/web'
     =yield :head
     =csrf_meta_tag
   %body{:class=>controller.action_name=='index' ? 'big' : nil}
