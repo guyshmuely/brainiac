@@ -2,8 +2,8 @@
 %html
   %head
     %title
-    =stylesheet_link_tag 'admin/admin'
-    =javascript_include_tag :defaults, :jqtouch
+    =stylesheet_link_tag 'admin/admin', :cache => 'cached/web_admin'
+    =javascript_include_tag :defaults, :jqtouch, :cache => 'cached/web_admin'
     =yield :head
     =csrf_meta_tag
   %body

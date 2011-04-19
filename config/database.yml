@@ -33,12 +33,21 @@ test:
 #  database: db/production.sqlite3
 #  pool: 5
 #  timeout: 5000
+
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql
   database: brainiac_development
-  pool: 5
   username: brainiac
   password: brainiac4all
   host: 127.0.0.1
-  timeout: 5000
+
+#
+#production:
+#  adapter: postgresql
+#  encoding: unicode
+#  database: brainiac_development
+#  pool: 5
+#  username: brainiac
+#  password: brainiac4all
+#  host: 127.0.0.1
+#  timeout: 5000
