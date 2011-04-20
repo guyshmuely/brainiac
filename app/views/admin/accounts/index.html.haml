@@ -1,0 +1,20 @@
+%div
+  Accounts
+
+%table
+  %thead
+    %tr
+      %th
+        email
+      %th
+        confirmed?
+      %th
+        Edit
+  %tbody
+    -for account in @accounts
+      %tr
+        %td
+          =account.email
+        %td=account.confirmed?
+        %td
+          =link_to 'edit', edit_admin_account_path(account.id)

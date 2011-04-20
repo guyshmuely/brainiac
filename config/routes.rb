@@ -12,6 +12,7 @@ Brainiac::Application.routes.draw do
   resources :courses
 
   namespace 'admin' do
+    resources :accounts
     resources :courses do
       resources :cards
     end
