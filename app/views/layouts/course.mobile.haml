@@ -1,5 +1,7 @@
+- options = {:lang=>'en' , 'xml:lang'=>'en', :xmlns=>'http://www.w3.org/1999/xhtml'}
+- options[:manifest]="/course_production.manifest" if Rails.env.production? && mobile_device?
 !!!
-%html{:manifest=>"/course_#{Rails.env}.manifest", :lang=>'en' , 'xml:lang'=>'en', :xmlns=>'http://www.w3.org/1999/xhtml'}
+%html{options}
   %head
     %meta{:charset => "UTF-8"}
     //%meta{:name=>"viewport", :content=>"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"}

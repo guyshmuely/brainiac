@@ -1,14 +1,20 @@
 #jqt
+  overflow: hidden
+  height: 100%
   &.landscape
-    height: 210px
-    min-height: 210px
+    //height: 210px
+    //min-height: 210px
     div.main
-      height: 210px
+      //height: 210px
   &.portrait
-    height: 367px
-    min-height: 367px    
+    //height: 367px
+    //min-height: 367px
+    //height: 100%px
     div.main
-      height: 367px      
+      //height: 367px
+      //height: 100%
+  div.toolbar
+    width: 100%
   div.main
     position: relative
     z-index: 1
@@ -88,8 +94,8 @@
             background-color: #adadb0
             border-top: 1px solid #bbbbbd
 div.bar
-  position: absolute
   bottom: 0px
+  position: fixed
   height: 49px
   width: 100%
   background: url('/images/client/bar_background.png') repeat-x
