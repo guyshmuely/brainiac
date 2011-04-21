@@ -1,10 +1,31 @@
 body {
-  background: #4a4a4a url(/images/layout/BG.jpg) repeat-x 0px -50px; }
+  background: #4a4a4a url(/images/layout/BG.jpg) repeat-x 0px -50px;
+  font-family: Tahoma; }
   body #wrapper {
     min-height: 700px;
     background: url(/images/layout/BG-header.jpg) -200 no-repeat; }
     body #wrapper #mantra {
       height: 400px; }
+      body #wrapper #mantra input {
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        height: 15px;
+        border: 1px solid gray;
+        width: 160px; }
+      body #wrapper #mantra #account_remember_me {
+        width: 10px; }
+      body #wrapper #mantra #account_submit {
+        color: #7db7cd;
+        height: 40px;
+        width: 100px;
+        font-family: Tahoma;
+        font-size: 20px;
+        font-weight: bold;
+        width: 120px;
+        background-color: white; }
+      body #wrapper #mantra strong {
+        font-size: 10px;
+        color: red; }
       body #wrapper #mantra #new_user {
         float: left;
         margin-left: 0px;
@@ -34,17 +55,10 @@ body {
             font-size: 15px;
             font-weight: bold;
             color: gray; }
-            body #wrapper #mantra #new_user #form_new form input {
-              -moz-border-radius: 5px;
-              border-radius: 5px;
-              height: 15px;
-              border: 1px solid gray; }
-              body #wrapper #mantra #new_user #form_new form input#account_submit {
-                color: black;
-                margin-top: 17px;
-                margin-left: 170px;
-                height: 40px;
-                width: 100px; }
+            body #wrapper #mantra #new_user #form_new form #account_submit {
+              margin-top: 17px;
+              margin-left: 155px;
+              height: 50px; }
           body #wrapper #mantra #new_user #form_new #start {
             margin-top: 0px;
             margin-left: 200px; }
@@ -78,17 +92,10 @@ body {
           margin-bottom: -21px;
           font-size: 15px;
           font-weight: bold; }
-          body #wrapper #mantra #exist_user #form_exist form input {
-            -moz-border-radius: 5px;
-            border-radius: 5px;
-            height: 15px;
-            border: 1px solid gray; }
-            body #wrapper #mantra #exist_user #form_exist form input#account_submit {
-              color: black;
-              margin-top: 43px;
-              margin-left: 250px;
-              height: 40px;
-              width: 100px; }
+          body #wrapper #mantra #exist_user #form_exist form #account_submit {
+            margin-top: 43px;
+            margin-left: 250px;
+            height: 50px; }
         body #wrapper #mantra #exist_user #form_exist #start {
           margin-top: 0px;
           margin-left: 200px; }
