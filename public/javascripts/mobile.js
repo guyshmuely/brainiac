@@ -40,6 +40,28 @@ $(window).load(function() {
     activateScroller('home');
     calcDimention();
     $('body').bind('turn',calcDimention);
+
+  jQuery('#account_new a.login').tap(function(e) {
+    var $form = jQuery(this).closest('form');
+    return app.login($form);
+  });
+
+  jQuery('#account_new').submit(function(e) {
+    var $form = jQuery(this);
+    return app.login($form);
+  });
+
+  jQuery('.signOutButton').tap(function(e) {
+    return app.logout();
+  });
+
+  if (window.localStorage['authentication_token']==0) {
+    jQuery('.signInButton').css('display', 'inline');
+    jQuery('.signOutButton').css('display', 'none');
+  } else {
+    jQuery('.signInButton').css('display', 'none');
+    jQuery('.signOutButton').css('display', 'inline');
+  }
 });
 
 if (window.navigator.standalone) {
@@ -87,6 +109,44 @@ jQuery(function() {
 
 
 var app = {
+
+  logout: function() {
+
+    $.ajax({
+      type:'get', url:'/accounts/sign_out',
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+          window.localStorage['authentication_token']=0;
+          jQuery('.signInButton').css('display', 'inline');
+          jQuery('.signOutButton').css('display', 'none');
+//          jQT.goTo('#home');
+        } else {
+          alert("There was an error logging out. Try again.");
+        }
+      }
+    });
+
+  },
+
+  login: function($form) {
+
+    $.ajax({
+      type:$form.attr('method'), url:$form.attr('action'),
+      dataType: 'json', data:$form.serialize(),
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+          window.localStorage['authentication_token']=jQuery(req.responseText).find('#authentication_token');
+          jQuery('.signInButton').css('display', 'none');
+          jQuery('.signOutButton').css('display', 'inline');
+          jQT.goBack();
+        } else {
+          alert("There was an error logging in. Try again.");
+        }
+      }
+    });
+
+  },
+
   getCourses:function (f) {
     $.ajax({
       type:'get', url:'/courses', data:'',
@@ -111,3 +171,5 @@ $(function() {
 //  var element = jQuery('div.bar');
 //   element.css('bottom','0px');
 //};
+
+

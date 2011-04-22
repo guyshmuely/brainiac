@@ -1,3 +1,4 @@
+
 /*!
  * jQuery JavaScript Library v1.4.4
  * http://jquery.com/
@@ -8196,7 +8197,6 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
         }
         function doNavigation(fromPage, toPage, animation, backwards) {
             _debug();
-
             // Error check for target page
             if (toPage.length === 0) {
                 $.fn.unselect();
@@ -8806,7 +8806,6 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
 
         // Document ready stuff
         $(document).ready(function() {
-
             // Store some properties in the jQuery support object
             $.support.animationEvents = supportForAnimationEvents();
             $.support.cssMatrix = supportForCssMatrix();
@@ -8919,8 +8918,11 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
                 .trigger('orientationchange');
 
             // Normalize href
+            // Used for removing #somthing from the url on first load
+            // In our app this "feature" is causing the application to load twice...
+            // since sometimes people access .../#home
             if (location.hash.length) {
-                location.replace(location.href.split('#')[0]);
+                //location.replace(location.href.split('#')[0]);
             }
 
             // Make sure exactly one child of body has "current" class
@@ -8941,7 +8943,6 @@ m(d,b))e.push(p(d)+(f?": ":":")+c)}}else for(d in b)if(Object.hasOwnProperty.cal
             }
             addPageToHistory(currentPage);
             scrollTo(0, 0);
-
         });
 
         // Expose public methods and properties
@@ -9767,7 +9768,7 @@ var jQT = new $.jQTouch({
     '/images/client/jqtouch/themes/apple/activeButton.png',
     '/images/client/jqtouch/themes/apple/pinstripes.png',
     '/images/client/jqtouch/themes/apple/toolButton.png',
-    '/images/client/jqtouch/themes/apple/toolbar.png',
+    '/images/client/jqtouch/themes/apple/toolbar.png'
   ]
 });
 
@@ -9776,7 +9777,7 @@ function selectBarLink(element) {
     $(element).addClass("selected")
 }
 
-function activateScroller(id) {    
+function activateScroller(id) {
         var scroller = $('div#' + id + ' div.scroller')[0];
         if (!$(scroller).hasClass('iscrollActive')) {
             $(scroller).addClass("iscrollActive")
@@ -9788,8 +9789,38 @@ function activateScroller(id) {
         scroller.iscroll.refresh();
 }
 
-$(window).load(function() {    
+function calcDimention() {
+//  jQuery('div#jqt').css('width',window.innerWidth);
+  jQuery('div#jqt div.main').css('height',window.innerHeight-jQuery('div.bar').outerHeight() - jQuery('div.toolbar').outerHeight());
+}
+
+$(window).load(function() {
     activateScroller('home');
+    calcDimention();
+    $('body').bind('turn',calcDimention);
+
+  jQuery('#account_new a.login').tap(function(e) {
+    var $form = jQuery(this).closest('form');
+    return app.login($form);
+  });
+
+  jQuery('#account_new').submit(function(e) {
+    var $form = jQuery(this);
+    return app.login($form);
+  });
+
+  jQuery('.signOutButton').tap(function(e) {
+    return app.logout();
+  });
+
+  if (window.localStorage['authentication_token']==0) {
+    jQuery('.signInButton').css('display', 'inline');
+    jQuery('.signOutButton').css('display', 'none');
+  } else {
+    jQuery('.signInButton').css('display', 'none');
+    jQuery('.signOutButton').css('display', 'inline');
+  }
+
 });
 
 if (window.navigator.standalone) {
@@ -9816,7 +9847,7 @@ jQuery(function() {
                 $ul.append(req.responseText);
                 $('#top ul:first a').click(function(e) {
                     e.preventDefault();
-                    jQT.tapHandler(e)
+                    jQT.tapHandler(e);
                     //this.tap();
                     //jqTouch.goTo();
                     //jQT.goTo(this.href,'slide');
@@ -9824,7 +9855,7 @@ jQuery(function() {
                 });
                 $page.data("loaded", true);
                 activateScroller('top');
-            });            
+            });
         }
     })
     $('#categories').bind('pageAnimationEnd',function(e,info) {
@@ -9837,6 +9868,44 @@ jQuery(function() {
 
 
 var app = {
+
+  logout: function() {
+
+    $.ajax({
+      type:'get', url:'/accounts/sign_out',
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+          window.localStorage['authentication_token']=0;
+          jQuery('.signInButton').css('display', 'inline');
+          jQuery('.signOutButton').css('display', 'none');
+//          jQT.goTo('#home');
+        } else {
+          alert("There was an error logging out. Try again.");
+        }
+      }
+    });
+
+  },
+
+  login: function($form) {
+
+    $.ajax({
+      type:$form.attr('method'), url:$form.attr('action'),
+      dataType: 'json', data:$form.serialize(),
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+          window.localStorage['authentication_token']=jQuery(req.responseText).find('#authentication_token');
+          jQuery('.signInButton').css('display', 'none');
+          jQuery('.signOutButton').css('display', 'inline');
+          jQT.goBack();
+        } else {
+          alert("There was an error logging in. Try again.");
+        }
+      }
+    });
+
+  },
+
   getCourses:function (f) {
     $.ajax({
       type:'get', url:'/courses', data:'',
@@ -9856,6 +9925,14 @@ $(function() {
     alert("There was an error when loading the cache manifest.");
   });
 });
+
+//window.onscroll = function() {
+//  var element = jQuery('div.bar');
+//   element.css('bottom','0px');
+//};
+
+
+
 
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults

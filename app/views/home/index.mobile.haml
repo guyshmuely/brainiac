@@ -3,8 +3,9 @@
 - title 'Brainiac'
 %div#home.current
   %div.toolbar
-    //=link_to "Back", nil, :class => "back" unless current_page? root_path
-    =link_to 'About','#about',:id=>'infoButton',:class=>"button flip"
+    -#=link_to "Back", nil, :class => "back" unless current_page? root_path
+    =render 'devise/shared/sign_in'
+    =link_to 'About','#about',:id=>'infoButton',:class=>"button leftButton flip"
     %h1
       Brainiac
     //=link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
@@ -26,3 +27,4 @@
 =render :partial=>"categories"
 =render :partial=>"search"
 =render :partial=>"downloads"
+=render :file => 'devise/sessions/new'

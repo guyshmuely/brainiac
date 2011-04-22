@@ -1,0 +1,38 @@
+%div#sign_in.current
+  %div.toolbar
+    =link_to "Back", nil, :class => "back"
+    //=link_to 'About','#about',:id=>'infoButton',:class=>"button flip"
+    %h1
+      Login
+    //=link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
+    -unless flash.empty?
+      %div.info
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+  %div.main
+    %div.scroller
+      -form_for(Account.new, :as => :account, :url => session_path(:account)) do |f|
+        %p
+          =f.label :email
+          %br
+          =f.email_field :email
+        %p
+          =f.label :password
+          %br
+          = f.password_field :password
+        -#- if devise_mapping.rememberable?
+        -#  %p
+        -#    =f.check_box :remember_me
+        -#    = f.label :remember_me
+        %p
+          =link_to_function "Sign in",nil, :class=>'grayButton login'
+
+        -#%ul#start.menu
+        -#  %li.current
+        -#    =image_tag '/images/right_arrow.png'
+        -#    =link_to nil do
+        -#      %span Login
+        -#      %br
+        -#      to your account
+
+      -#= render :partial => "devise/shared/links"
