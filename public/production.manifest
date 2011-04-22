@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Rev 16
+# Rev 17
 
 # /index.html
 # /jqtouch/jqtouch/jqtouch.min.css
@@ -11,8 +11,8 @@ CACHE MANIFEST
 # /jqtouch/javascripts/topfunky-sparkline.js
 # /jqtouch/mobile.js
 
-javascripts/cached/all.js
-stylesheets/cached/all.css
+javascripts/cached/mobile.js
+stylesheets/cached/mobile.css
 stylesheets/client/home.css
 stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
