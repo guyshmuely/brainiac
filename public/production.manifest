@@ -34,14 +34,19 @@ images/client/search.png
 images/client/search_selected.png
 images/client/top.png
 images/client/top_selected.png
-
-NETWORK:
-http://s3.amazonaws.com/brainiac/images/
-http://s3.amazonaws.com/brainiac/icons/
 images/client/under_construction.jpg
 images/client/guy.jpg
 images/client/hagit.jpg
 images/client/sagi.jpg
+
+
+NETWORK:
+http://s3.amazonaws.com/brainiac/images/
+http://s3.amazonaws.com/brainiac/icons/
+#images/client/under_construction.jpg
+#images/client/guy.jpg
+#images/client/hagit.jpg
+#images/client/sagi.jpg
 /courses
 
 # FALLBACK:

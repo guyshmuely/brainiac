@@ -10368,8 +10368,6 @@ google.bookmarkbubble.Bubble.prototype.build_ = function() {
 };
 
 
-alert(window.localStorage['username']);
-
 var jQT = new $.jQTouch({
   icon: icon_path,
   addGlossToIcon: true,

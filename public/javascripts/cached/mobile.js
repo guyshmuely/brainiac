@@ -1,4 +1,3 @@
-
 /*!
  * jQuery JavaScript Library v1.4.4
  * http://jquery.com/
@@ -9794,7 +9793,8 @@ function calcDimention() {
   jQuery('div#jqt div.main').css('height',window.innerHeight-jQuery('div.bar').outerHeight() - jQuery('div.toolbar').outerHeight());
 }
 
-$(window).load(function() {
+$(document).ready(function() {
+//$(window).load(function() {
     activateScroller('home');
     calcDimention();
     $('body').bind('turn',calcDimention);
@@ -9820,7 +9820,6 @@ $(window).load(function() {
     jQuery('.signInButton').css('display', 'none');
     jQuery('.signOutButton').css('display', 'inline');
   }
-
 });
 
 if (window.navigator.standalone) {

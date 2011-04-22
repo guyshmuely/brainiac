@@ -36,7 +36,8 @@ function calcDimention() {
   jQuery('div#jqt div.main').css('height',window.innerHeight-jQuery('div.bar').outerHeight() - jQuery('div.toolbar').outerHeight());
 }
 
-$(window).load(function() {
+$(document).ready(function() {
+//$(window).load(function() {
     activateScroller('home');
     calcDimention();
     $('body').bind('turn',calcDimention);
