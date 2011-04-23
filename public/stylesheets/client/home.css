@@ -3,6 +3,17 @@
   height: 100%; }
   #jqt div.toolbar {
     width: 100%; }
+  #jqt #sign_in .main {
+    padding: 10px; }
+    #jqt #sign_in .main ul.edit {
+      margin-bottom: 10px; }
+      #jqt #sign_in .main ul.edit li {
+        height: 25px; }
+        #jqt #sign_in .main ul.edit li input {
+          height: 20px;
+          text-shadow: transparent 0px 1px 1px;
+          border: 0px solid;
+          outline: none; }
   #jqt div.main {
     position: relative;
     z-index: 1;

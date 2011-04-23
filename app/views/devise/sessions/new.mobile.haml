@@ -12,19 +12,19 @@
   %div.main
     %div.scroller
       -form_for(Account.new, :as => :account, :url => session_path(:account)) do |f|
-        %p
-          =f.label :email
-          %br
-          =f.email_field :email
-        %p
-          =f.label :password
-          %br
-          = f.password_field :password
+        %ul.edit
+          %li
+            -#=f.label :email
+            =f.email_field :email, :placeholder=>'email'
+          %li
+            -#=f.label :password
+            = f.password_field :password, :placeholder=>'password'
         -#- if devise_mapping.rememberable?
         -#  %p
         -#    =f.check_box :remember_me
         -#    = f.label :remember_me
         %p
+          =f.submit('',:style=>'opacity: 0;width: 0px ;height: 0px;line-height: 0px;border: 0px solid;border-radius:0px;padding: 0px')
           =link_to_function "Sign in",nil, :class=>'grayButton login'
 
         -#%ul#start.menu

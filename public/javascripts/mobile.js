@@ -6,6 +6,8 @@ var jQT = new $.jQTouch({
   formSelector: '.form',
   preloadImages: [
     '/images/client/jqtouch/themes/apple/activeBackButton.png',
+    '/images/client/jqtouch/themes/apple/blueButton.png',
+    '/images/client/jqtouch/themes/apple/grayButton.png',
     '/images/client/jqtouch/themes/apple/backButton.png',
     '/images/client/jqtouch/themes/apple/activeButton.png',
     '/images/client/jqtouch/themes/apple/pinstripes.png',
@@ -56,12 +58,12 @@ $(document).ready(function() {
     return app.logout();
   });
 
-  if (window.localStorage['authentication_token']==0) {
-    jQuery('.signInButton').css('display', 'inline');
-    jQuery('.signOutButton').css('display', 'none');
-  } else {
+  if (window.localStorage['current_account_email']) {
     jQuery('.signInButton').css('display', 'none');
     jQuery('.signOutButton').css('display', 'inline');
+  } else {
+    jQuery('.signInButton').css('display', 'inline');
+    jQuery('.signOutButton').css('display', 'none');
   }
 });
 
@@ -117,7 +119,8 @@ var app = {
       type:'get', url:'/accounts/sign_out',
       complete:function (req) {
         if (req.status === 200 || req.status === 304) {
-          window.localStorage['authentication_token']=0;
+          window.localStorage.removeItem('authentication_token');
+          window.localStorage.removeItem('current_account_email');
           jQuery('.signInButton').css('display', 'inline');
           jQuery('.signOutButton').css('display', 'none');
 //          jQT.goTo('#home');
@@ -136,7 +139,8 @@ var app = {
       dataType: 'json', data:$form.serialize(),
       complete:function (req) {
         if (req.status === 200 || req.status === 304) {
-          window.localStorage['authentication_token']=jQuery(req.responseText).find('#authentication_token');
+          window.localStorage['authentication_token']=jQuery(req.responseText).find('#authentication_token').html();
+          window.localStorage['current_account_email']=jQuery(req.responseText).find('#current_account_email').html();
           jQuery('.signInButton').css('display', 'none');
           jQuery('.signOutButton').css('display', 'inline');
           jQT.goBack();
@@ -172,5 +176,15 @@ $(function() {
 //  var element = jQuery('div.bar');
 //   element.css('bottom','0px');
 //};
+
+function installCourse(link) {
+  if (window.localStorage['current_account_email']) {
+    window.open(link+'?auth_token='+window.localStorage['authentication_token']);
+  } else {
+    jQT.goTo('#sign_in','flipleft');
+//    return false;
+  }
+
+}
 
 

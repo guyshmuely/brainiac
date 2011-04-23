@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#20
+#21
 
 javascripts/cached/course.js
 stylesheets/cached/course.css
@@ -7,6 +7,7 @@ stylesheets/cached/course.css
 # stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
+images/client/jqtouch/themes/apple/grayButton.png
 images/client/jqtouch/themes/apple/backButton.png
 images/client/jqtouch/themes/apple/activeBackButton.png
 images/client/jqtouch/themes/apple/activeButton.png

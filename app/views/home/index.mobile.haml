@@ -9,10 +9,10 @@
     %h1
       Brainiac
     //=link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
-    -unless flash.empty?
-      %div.info
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
+    -#-unless flash.empty?
+    -#  %div.info
+    -#  - flash.each do |name, msg|
+    -#    = content_tag :div, msg, :id => "flash_#{name}"
   %div.main
     %div.scroller
       %div{:style=>'text-align:center;margin-top:10px'}

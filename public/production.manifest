@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Rev 17
+# Rev 18
 
 # /index.html
 # /jqtouch/jqtouch/jqtouch.min.css
@@ -17,6 +17,7 @@ stylesheets/client/home.css
 stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
+images/client/jqtouch/themes/apple/blueButton.png
 images/client/jqtouch/themes/apple/backButton.png
 images/client/jqtouch/themes/apple/activeBackButton.png
 images/client/jqtouch/themes/apple/activeButton.png
