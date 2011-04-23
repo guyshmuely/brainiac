@@ -16,6 +16,7 @@ stylesheets/cached/mobile.css
 stylesheets/client/home.css
 stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
+images/client/jqtouch/themes/apple/grayButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
 images/client/jqtouch/themes/apple/blueButton.png
 images/client/jqtouch/themes/apple/backButton.png
