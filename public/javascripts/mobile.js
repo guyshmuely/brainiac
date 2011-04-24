@@ -116,17 +116,19 @@ var app = {
   logout: function() {
 
     $.ajax({
-      type:'get', url:'/accounts/sign_out',
+      type:'get', url: '/accounts/sign_out',
       complete:function (req) {
         if (req.status === 200 || req.status === 304) {
-          window.localStorage.removeItem('authentication_token');
-          window.localStorage.removeItem('current_account_email');
-          jQuery('.signInButton').css('display', 'inline');
-          jQuery('.signOutButton').css('display', 'none');
+//          window.localStorage.removeItem('authentication_token');
+//          window.localStorage.removeItem('current_account_email');
 //          jQT.goTo('#home');
         } else {
-          alert("There was an error logging out. Try again.");
+//          alert("There was an error logging out. Try again.");
         }
+        window.localStorage.removeItem('authentication_token');
+        window.localStorage.removeItem('current_account_email');
+        jQuery('.signInButton').css('display', 'inline');
+        jQuery('.signOutButton').css('display', 'none');
       }
     });
 
