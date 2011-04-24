@@ -179,10 +179,12 @@ $(function() {
 
 function installCourse(link) {
   if (window.localStorage['current_account_email']) {
-    window.open(link+'?auth_token='+window.localStorage['authentication_token']);
+    var new_link = jQuery(link).attr('href')+'?auth_token='+window.localStorage['authentication_token'];
+    jQuery(link).attr('href',new_link);
+//    window.open(link+'?auth_token='+window.localStorage['authentication_token'],'_blank');
   } else {
     jQT.goTo('#sign_in','flipleft');
-//    return false;
+    return false;
   }
 
 }
