@@ -5,10 +5,10 @@
     %h1
       Login
     //=link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
-    -unless flash.empty?
-      %div.info
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
+    -#-unless flash.empty?
+    -#  %div.info
+    -#  - flash.each do |name, msg|
+    -#    = content_tag :div, msg, :id => "flash_#{name}"
   %div.main
     %div.scroller
       -form_for(Account.new, :as => :account, :url => session_path(:account)) do |f|
