@@ -114,7 +114,6 @@ jQuery(function() {
 var app = {
 
   logout: function() {
-
     $.ajax({
       type:'get', url: '/accounts/sign_out.mobile?authentication_token=' + window.localStorage['authentication_token'],
       complete:function (req) {

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Rev 19
+# Rev 20
 
 # /index.html
 # /jqtouch/jqtouch/jqtouch.min.css
@@ -46,6 +46,8 @@ NETWORK:
 http://s3.amazonaws.com/brainiac/images/
 http://s3.amazonaws.com/brainiac/icons/
 /courses
+/accounts/sign_out
+/accounts/sign_in
 
 
 # FALLBACK:

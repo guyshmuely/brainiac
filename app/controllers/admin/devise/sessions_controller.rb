@@ -22,7 +22,7 @@ class Admin::Devise::SessionsController < Devise::SessionsController
     # We actually need to hardcode this, as Rails default responder doesn't
     # support returning empty response on GET request
     respond_to do |format|
-      format.mobile {render :text => '', :status => :ok}
+      format.mobile {render :text => 'ok', :status => :ok}
       format.html { redirect_to after_sign_out_path_for(resource_name) }
 #      format.any(*navigational_formats) { redirect_to after_sign_out_path_for(resource_name) }
 #      format.all do
