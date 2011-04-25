@@ -9873,17 +9873,26 @@ var app = {
   logout: function() {
 
     $.ajax({
-      type:'get', url:'/accounts/sign_out',
+      type:'get', url: '/accounts/sign_out.mobile?authentication_token=' + window.localStorage['authentication_token'],
       complete:function (req) {
         if (req.status === 200 || req.status === 304) {
-          window.localStorage.removeItem('authentication_token');
-          window.localStorage.removeItem('current_account_email');
-          jQuery('.signInButton').css('display', 'inline');
-          jQuery('.signOutButton').css('display', 'none');
+
+            window.localStorage.removeItem('authentication_token');
+            window.localStorage.removeItem('current_account_email');
+            jQuery('.signInButton').css('display', 'inline');
+            jQuery('.signOutButton').css('display', 'none');
+
+
+//          window.localStorage.removeItem('authentication_token');
+//          window.localStorage.removeItem('current_account_email');
 //          jQT.goTo('#home');
         } else {
           alert("There was an error logging out. Try again.");
         }
+//        window.localStorage.removeItem('authentication_token');
+//        window.localStorage.removeItem('current_account_email');
+//        jQuery('.signInButton').css('display', 'inline');
+//        jQuery('.signOutButton').css('display', 'none');
       }
     });
 
@@ -9892,12 +9901,13 @@ var app = {
   login: function($form) {
 
     $.ajax({
-      type:$form.attr('method'), url:$form.attr('action'),
+      type:$form.attr('method'), url:$form.attr('action') + '.mobile',
       dataType: 'json', data:$form.serialize(),
       complete:function (req) {
         if (req.status === 200 || req.status === 304) {
-          window.localStorage['authentication_token']=jQuery(req.responseText).find('#authentication_token').html();
-          window.localStorage['current_account_email']=jQuery(req.responseText).find('#current_account_email').html();
+          var account = jQuery.parseJSON(req.responseText).account;
+          window.localStorage['authentication_token']=account.authentication_token;
+          window.localStorage['current_account_email']=account.email;
           jQuery('.signInButton').css('display', 'none');
           jQuery('.signOutButton').css('display', 'inline');
           jQT.goBack();
