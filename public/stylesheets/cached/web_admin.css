@@ -2,6 +2,36 @@ body {
   margin: 0px;
   font-family: Tahoma, Geneva, sans-serif;
   max-width: 1600px; }
+  body a {
+    text-decoration: none;
+    color: black; }
+  body ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none; }
+  body .notice {
+    padding: 5px;
+    border: 1px solid #99cc99;
+    background-color: #e2f9e3;
+    color: #006600; }
+  body .error {
+    padding: 5px;
+    border: 1px solid #a3032e;
+    background-color: #ffe4e1; }
+  body #new {
+    float: right;
+    padding-top: 40px;
+    margin-right: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: white url("/images/admin/new.png") no-repeat center 7px;
+    width: 50px;
+    height: 25px;
+    text-align: center; }
+  body table.data_table thead th.small {
+    width: 80px; }
+  body table.data_table thead th.medium {
+    width: 120px; }
   body #container {
     background: #f0f0f0 url("/images/admin/stripe.png") repeat-y fixed;
     float: left;
@@ -12,7 +42,7 @@ body {
     body #container #left_dash {
       color: #f5f5f5;
       margin-left: 20px;
-      width: 16%;
+      width: 210px;
       position: fixed;
       float: left;
       clear: both;
@@ -28,7 +58,7 @@ body {
           background: url("/images/admin/menu_spacer.png") no-repeat;
           width: 220px;
           height: 46px;
-          margin-left: -65px;
+          margin-left: -25px;
           clear: both;
           float: left; }
           body #container #left_dash #start_menu li.current, body #container #left_dash #start_menu li:hover {
@@ -61,37 +91,34 @@ body {
         margin-bottom: 13px; }
     body #container #right_dash {
       margin-top: 20px;
-      float: right;
-      width: 84%;
+      margin-left: 250px;
+      margin-right: 15px;
       min-height: 1000px; }
       body #container #right_dash #title {
-        color: gray;
-        margin-left: 60px; }
-      body #container #right_dash #deshboard_menu {
-        margin-left: 30px; }
-        body #container #right_dash #deshboard_menu li {
+        color: gray; }
+      body #container #right_dash #deshboard_menu li {
+        float: left;
+        margin: 0 15px 15px 0;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background: white;
+        border: 1px solid white;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -moz-box-shadow: 1px 1px 0px #999999;
+        -webkit-box-shadow: 1px 1px 0px #999999; }
+        body #container #right_dash #deshboard_menu li a {
+          clear: both;
           float: left;
-          margin: 0 15px 15px 0;
-          width: 100px;
           height: 100px;
-          position: relative;
-          background: white;
-          border: 1px solid white;
-          border-radius: 5px;
-          -moz-border-radius: 5px;
-          -moz-box-shadow: 1px 1px 0px #999999;
-          -webkit-box-shadow: 1px 1px 0px #999999; }
-          body #container #right_dash #deshboard_menu li a {
-            clear: both;
-            float: left;
-            height: 100px;
-            text-decoration: none;
-            width: 100px; }
-            body #container #right_dash #deshboard_menu li a img {
-              margin-left: 15px;
-              margin-top: 10px; }
-            body #container #right_dash #deshboard_menu li a span {
-              line-height: 20px;
-              margin-left: 33px;
-              font-size: 13px;
-              color: gray; }
+          text-decoration: none;
+          width: 100px; }
+          body #container #right_dash #deshboard_menu li a img {
+            margin-left: 15px;
+            margin-top: 10px; }
+          body #container #right_dash #deshboard_menu li a span {
+            line-height: 20px;
+            margin-left: 33px;
+            font-size: 13px;
+            color: gray; }

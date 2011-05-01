@@ -1,0 +1,86 @@
+/*
+Syntax error: Properties aren't allowed at the root of a document.
+        on line 1 of C:/Users/Sagi/rails_projects/brainiac/public/stylesheets/sass/admin/index.sass
+
+1: background-color: red
+
+Backtrace:
+C:/Users/Sagi/rails_projects/brainiac/public/stylesheets/sass/admin/index.sass:1
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:108:in `check_child!'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:95:in `<<'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:386:in `validate_and_append_child'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:372:in `append_children'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:338:in `each'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:338:in `append_children'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:208:in `_to_tree'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:178:in `to_tree'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/haml/util.rb:289:in `silence_haml_warnings'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:178:in `to_tree'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/files.rb:44:in `tree_for'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:220:in `update_stylesheet'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:85:in `update_stylesheets'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:78:in `each'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:78:in `update_stylesheets'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:76:in `each'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:76:in `update_stylesheets'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin.rb:50:in `check_for_updates'
+C:/Ruby/lib/ruby/gems/1.8/gems/haml-3.0.21/lib/sass/plugin/rack.rb:40:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+C:/Ruby/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+C:/Ruby/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+C:/Users/Sagi/rails_projects/brainiac/script/rails:6:in `require'
+C:/Users/Sagi/rails_projects/brainiac/script/rails:6
+-e:1:in `load'
+-e:1
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Properties aren't allowed at the root of a document.\A         on line 1 of C:/Users/Sagi/rails_projects/brainiac/public/stylesheets/sass/admin/index.sass\A \A 1: background-color: red"; }
