@@ -521,15 +521,17 @@ body {
 }
 
 #jqt .toolbar > h1 {
-    position: absolute;
+/*    position: absolute;*/
     overflow: hidden;
-    left: 50%;
+/*    left: 50%;*/
     top: 10px;
     line-height: 1em;
     margin: 1px 0 0 -75px;
     height: 40px;
     font-size: 20px;
-    width: 150px;
+/*    max-width: 200px;*/
+    width: 300px;
+    margin: auto;
     font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
     text-align: center;
@@ -615,9 +617,10 @@ body {
 
 #jqt .whiteButton.active, #jqt .grayButton.active, #jqt .redButton.active, #jqt .blueButton.active, #jqt .greenButton.active,
 #jqt .whiteButton:active, #jqt .grayButton:active, #jqt .redButton:active, #jqt .blueButton:active, #jqt .greenButton:active {
-    -webkit-border-image: url(/images/client/jqtouch/themes/apple/activeButton.png) 0 12 0 12;
+    -webkit-border-image: url(/images/client/jqtouch/themes/apple/activeButton.png) 0 7 0 7;
+    -webkit-border-image: url(/images/client/jqtouch/themes/apple/blueButton.png) 0 12 0 12;
+    color: #FFFFFF;
 }
-
 #jqt .whiteButton {
     -webkit-border-image: url(/images/client/jqtouch/themes/apple/whiteButton.png) 0 12 0 12;
     text-shadow: rgba(255, 255, 255, 0.7) 0 1px 0;
@@ -667,13 +670,13 @@ body {
 
 #jqt li:first-child, #jqt li:first-child a {
     border-top: 0;
-    -webkit-border-top-left-radius: 8px;
-    -webkit-border-top-right-radius: 8px;
+/*    -webkit-border-top-left-radius: 8px;*/
+/*    -webkit-border-top-right-radius: 8px;*/
 }
 
 #jqt li:last-child, #jqt li:last-child a {
-    -webkit-border-bottom-left-radius: 8px;
-    -webkit-border-bottom-right-radius: 8px;
+/*    -webkit-border-bottom-left-radius: 8px;*/
+/*    -webkit-border-bottom-right-radius: 8px;*/
 }
 
 /* universal arrows */
@@ -708,7 +711,7 @@ body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-#jqt ul li a.active {
+#jqt ul li a.active , #jqt ul li a:active {
     background-color: #194fdb;
     color: #fff;
 }
@@ -1231,3 +1234,55 @@ input[type='submit'] {
     font-weight: inherit;
     padding: 10px;
 }
+
+
+#jqt div.main {
+  padding: 20px 10px; }
+  #jqt div.main div.content {
+    text-align: center;
+    margin-top: -50px;
+    position: absolute;
+    width: 100%;
+    direction: rtl;
+    font-size: 14pt; }
+  #jqt div.main div.header {
+    height: 70px; }
+    #jqt div.main div.header a.price {
+      margin-top: 20px;
+      margin-right: 0px;
+      float: right; }
+    #jqt div.main div.header div.picture {
+      float: left;
+      width: 57px;
+      height: 57px;
+      overflow: hidden;
+      margin-left: 5px;
+      margin-right: 20px;
+      -webkit-box-shadow: 0px 1px 5px #545456;
+      border-radius: 10px; }
+    #jqt div.main div.header div.creator {
+      font-size: 10pt;
+      color: #3a3a3a; }
+    #jqt div.main div.header div.title {
+      font-size: 12pt;
+      color: black; }
+  #jqt div.main div.description {
+    direction: rtl;
+    padding: 0px 5px;
+    padding-bottom: 100px; }
+  #jqt div.main a.next, #jqt div.main a.play, #jqt div.main a.yes, #jqt div.main a.no {
+    width: 100px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right; }
+    #jqt div.main a.next img, #jqt div.main a.play img, #jqt div.main a.yes img, #jqt div.main a.no img {
+      border: 10px solid transparent; }
+    #jqt div.main a.next:active img, #jqt div.main a.play:active img, #jqt div.main a.yes:active img, #jqt div.main a.no:active img {
+      border: 10px solid black;
+      -webkit-border-radius: 50px; }
+  #jqt div.main a.no {
+    left: 5px;
+    text-align: left; }
+  #jqt div.main a.whiteButton.active, #jqt div.main a.whiteButton:active {
+    -webkit-border-image: url(/images/client/jqtouch/themes/apple/redButton.png) 0 12 0 12; }

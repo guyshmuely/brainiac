@@ -52,7 +52,7 @@ var app = {
   data: [],
 
   getData:function (f) {
-    $.retrieveJSON('/client/courses/' + course_id + '/data.json' , function(data) {
+    jQuery.retrieveJSON('/client/courses/' + course_id + '/data.json?authentication_token='+account.authentication_token , function(data) {
       f(data);
     });
 
@@ -69,7 +69,7 @@ var app = {
   }
 };
 
-$(window).load(function() {
+$(document).ready(function() {
     app.getData(function(data) {        
         app.data = data;
         setCard('a');
@@ -164,3 +164,4 @@ $(function() {
     alert("There was an error when loading the cache manifest.");
   });
 });
+

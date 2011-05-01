@@ -3,15 +3,16 @@
 - title 'Brainiac'
 %div#home.current
   %div.toolbar
-    //=link_to "Back", nil, :class => "back" unless current_page? root_path
-    =link_to 'About','#about',:id=>'infoButton',:class=>"button flip"
+    -#=link_to "Back", nil, :class => "back" unless current_page? root_path
+    =render 'devise/shared/sign_in'
+    =link_to 'About','#about',:id=>'infoButton',:class=>"button leftButton flip"
     %h1
       Brainiac
     //=link_to "Full Site", root_url(:mobile => 0), :class => "button", :rel => "external"
-    -unless flash.empty?
-      %div.info
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
+    -#-unless flash.empty?
+    -#  %div.info
+    -#  - flash.each do |name, msg|
+    -#    = content_tag :div, msg, :id => "flash_#{name}"
   %div.main
     %div.scroller
       %div{:style=>'text-align:center;margin-top:10px'}
@@ -26,3 +27,4 @@
 =render :partial=>"categories"
 =render :partial=>"search"
 =render :partial=>"downloads"
+=render :file => 'admin/devise/sessions/new'

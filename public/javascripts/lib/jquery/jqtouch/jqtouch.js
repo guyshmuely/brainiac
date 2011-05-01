@@ -151,7 +151,6 @@
         }
         function doNavigation(fromPage, toPage, animation, backwards) {
             _debug();
-
             // Error check for target page
             if (toPage.length === 0) {
                 $.fn.unselect();
@@ -761,7 +760,6 @@
 
         // Document ready stuff
         $(document).ready(function() {
-
             // Store some properties in the jQuery support object
             $.support.animationEvents = supportForAnimationEvents();
             $.support.cssMatrix = supportForCssMatrix();
@@ -874,8 +872,11 @@
                 .trigger('orientationchange');
 
             // Normalize href
+            // Used for removing #somthing from the url on first load
+            // In our app this "feature" is causing the application to load twice...
+            // since sometimes people access .../#home
             if (location.hash.length) {
-                location.replace(location.href.split('#')[0]);
+                //location.replace(location.href.split('#')[0]);
             }
 
             // Make sure exactly one child of body has "current" class
@@ -896,7 +897,6 @@
             }
             addPageToHistory(currentPage);
             scrollTo(0, 0);
-
         });
 
         // Expose public methods and properties

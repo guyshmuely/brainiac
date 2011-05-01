@@ -8,7 +8,7 @@
       %div.course
         %div.header
           =link_to @course.price==0 ? 'FREE' : raw("&#8362; #{@course.price}"), |
-                   client_course_url(@course), :class=>'price button', :target=>"_blank" |
+                   client_course_url(@course),:onclick=>'installCourse(this)', :target=>'_blank',:class=>'price button flip' |
           %div.picture
             =image_tag @course.icon.url(:thumb) if @course.icon.file?
           %div.creator

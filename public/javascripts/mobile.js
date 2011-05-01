@@ -6,11 +6,13 @@ var jQT = new $.jQTouch({
   formSelector: '.form',
   preloadImages: [
     '/images/client/jqtouch/themes/apple/activeBackButton.png',
+    '/images/client/jqtouch/themes/apple/blueButton.png',
+    '/images/client/jqtouch/themes/apple/grayButton.png',
     '/images/client/jqtouch/themes/apple/backButton.png',
     '/images/client/jqtouch/themes/apple/activeButton.png',
     '/images/client/jqtouch/themes/apple/pinstripes.png',
     '/images/client/jqtouch/themes/apple/toolButton.png',
-    '/images/client/jqtouch/themes/apple/toolbar.png',
+    '/images/client/jqtouch/themes/apple/toolbar.png'
   ]
 });
 
@@ -19,7 +21,7 @@ function selectBarLink(element) {
     $(element).addClass("selected")
 }
 
-function activateScroller(id) {    
+function activateScroller(id) {
         var scroller = $('div#' + id + ' div.scroller')[0];
         if (!$(scroller).hasClass('iscrollActive')) {
             $(scroller).addClass("iscrollActive")
@@ -31,8 +33,38 @@ function activateScroller(id) {
         scroller.iscroll.refresh();
 }
 
-$(window).load(function() {    
+function calcDimention() {
+//  jQuery('div#jqt').css('width',window.innerWidth);
+  jQuery('div#jqt div.main').css('height',window.innerHeight-jQuery('div.bar').outerHeight() - jQuery('div.toolbar').outerHeight());
+}
+
+$(document).ready(function() {
+//$(window).load(function() {
     activateScroller('home');
+    calcDimention();
+    $('body').bind('turn',calcDimention);
+
+  jQuery('#account_new a.login').tap(function(e) {
+    var $form = jQuery(this).closest('form');
+    return app.login($form);
+  });
+
+  jQuery('#account_new').submit(function(e) {
+    var $form = jQuery(this);
+    return app.login($form);
+  });
+
+  jQuery('.signOutButton').tap(function(e) {
+    return app.logout();
+  });
+
+  if (window.localStorage['current_account_email']) {
+    jQuery('.signInButton').css('display', 'none');
+    jQuery('.signOutButton').css('display', 'inline');
+  } else {
+    jQuery('.signInButton').css('display', 'inline');
+    jQuery('.signOutButton').css('display', 'none');
+  }
 });
 
 if (window.navigator.standalone) {
@@ -59,7 +91,7 @@ jQuery(function() {
                 $ul.append(req.responseText);
                 $('#top ul:first a').click(function(e) {
                     e.preventDefault();
-                    jQT.tapHandler(e)
+                    jQT.tapHandler(e);
                     //this.tap();
                     //jqTouch.goTo();
                     //jQT.goTo(this.href,'slide');
@@ -67,7 +99,7 @@ jQuery(function() {
                 });
                 $page.data("loaded", true);
                 activateScroller('top');
-            });            
+            });
         }
     })
     $('#categories').bind('pageAnimationEnd',function(e,info) {
@@ -80,6 +112,55 @@ jQuery(function() {
 
 
 var app = {
+
+  logout: function() {
+    $.ajax({
+      type:'get', url: '/accounts/sign_out.mobile?authentication_token=' + window.localStorage['authentication_token'],
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+
+            window.localStorage.removeItem('authentication_token');
+            window.localStorage.removeItem('current_account_email');
+            jQuery('.signInButton').css('display', 'inline');
+            jQuery('.signOutButton').css('display', 'none');
+
+
+//          window.localStorage.removeItem('authentication_token');
+//          window.localStorage.removeItem('current_account_email');
+//          jQT.goTo('#home');
+        } else {
+          alert("There was an error logging out. Try again.");
+        }
+//        window.localStorage.removeItem('authentication_token');
+//        window.localStorage.removeItem('current_account_email');
+//        jQuery('.signInButton').css('display', 'inline');
+//        jQuery('.signOutButton').css('display', 'none');
+      }
+    });
+
+  },
+
+  login: function($form) {
+
+    $.ajax({
+      type:$form.attr('method'), url:$form.attr('action') + '.mobile',
+      dataType: 'json', data:$form.serialize(),
+      complete:function (req) {
+        if (req.status === 200 || req.status === 304) {
+          var account = jQuery.parseJSON(req.responseText).account;
+          window.localStorage['authentication_token']=account.authentication_token;
+          window.localStorage['current_account_email']=account.email;
+          jQuery('.signInButton').css('display', 'none');
+          jQuery('.signOutButton').css('display', 'inline');
+          jQT.goBack();
+        } else {
+          alert("There was an error logging in. Try again.");
+        }
+      }
+    });
+
+  },
+
   getCourses:function (f) {
     $.ajax({
       type:'get', url:'/courses', data:'',
@@ -99,3 +180,22 @@ $(function() {
     alert("There was an error when loading the cache manifest.");
   });
 });
+
+//window.onscroll = function() {
+//  var element = jQuery('div.bar');
+//   element.css('bottom','0px');
+//};
+
+function installCourse(link) {
+  if (window.localStorage['current_account_email']) {
+    var new_link = jQuery(link).attr('href')+'?auth_token='+window.localStorage['authentication_token'];
+    jQuery(link).attr('href',new_link);
+//    window.open(link+'?auth_token='+window.localStorage['authentication_token'],'_blank');
+  } else {
+    jQT.goTo('#sign_in','flipleft');
+    return false;
+  }
+
+}
+
+

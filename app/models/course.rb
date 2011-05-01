@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
-
+  has_and_belongs_to_many :accounts
+  belongs_to :account
   has_many :cards
   has_attached_file :image, 
                     :storage => :s3,

@@ -1,91 +1,97 @@
-#jqt.landscape {
-  height: 210px;
-  min-height: 210px; }
-  #jqt.landscape div.main {
-    height: 210px; }
-#jqt.portrait {
-  height: 367px;
-  min-height: 367px; }
-  #jqt.portrait div.main {
-    height: 367px; }
-#jqt div.main {
-  position: relative;
-  z-index: 1;
-  overflow-y: scroll; }
-  #jqt div.main div.scroller div.course {
-    padding: 20px 10px; }
-    #jqt div.main div.scroller div.course div.header {
-      height: 70px; }
-      #jqt div.main div.scroller div.course div.header a.price {
-        margin-top: 20px;
-        margin-right: 10px;
-        float: right; }
-      #jqt div.main div.scroller div.course div.header div.picture {
-        float: left;
-        width: 57px;
-        height: 57px;
-        overflow: hidden;
-        margin-left: 5px;
-        margin-right: 20px;
-        -webkit-box-shadow: 0px 1px 5px #545456;
-        border-radius: 10px; }
-      #jqt div.main div.scroller div.course div.header div.creator {
-        font-size: 10pt;
-        color: #3a3a3a; }
-      #jqt div.main div.scroller div.course div.header div.title {
-        font-size: 12pt;
-        color: black;
-        width: 140px;
-        margin-left: 80px;
-        white-space: normal; }
-    #jqt div.main div.scroller div.course div.description {
-      padding: 0px 5px;
-      direction: rtl; }
-  #jqt div.main div.scroller ul {
-    margin: 0px;
-    border: 0px solid; }
-    #jqt div.main div.scroller ul li {
-      border-radius: 0px;
-      height: 59px;
-      text-shadow: 0px 1px 1px #c2c2c2;
-      padding-top: 10px; }
-      #jqt div.main div.scroller ul li div.price {
-        font-size: 11pt;
-        color: #3a3a3a;
-        margin-top: 20px;
-        margin-right: 0px;
-        float: right;
-        padding-right: 30px;
-        height: 23px;
-        background: url("/images/client/jqtouch/themes/apple/chevron.png") -1px right no-repeat; }
-      #jqt div.main div.scroller ul li div.picture {
-        float: left;
-        width: 57px;
-        height: 57px;
-        overflow: hidden;
-        margin-left: 5px;
-        margin-right: 20px;
-        -webkit-box-shadow: 0px 1px 5px #545456;
-        border-radius: 10px; }
-      #jqt div.main div.scroller ul li div.creator {
-        font-size: 10pt;
-        color: #3a3a3a; }
-      #jqt div.main div.scroller ul li div.title {
-        font-size: 12pt;
-        color: black;
-        width: 120px;
-        margin-left: 80px;
-        white-space: normal; }
-      #jqt div.main div.scroller ul li.odd {
-        background-color: #98989c;
-        border-bottom: 1px solid #898a8d; }
-      #jqt div.main div.scroller ul li.even {
-        background-color: #adadb0;
-        border-top: 1px solid #bbbbbd; }
+#jqt {
+  overflow: hidden;
+  height: 100%; }
+  #jqt div.toolbar {
+    width: 100%; }
+  #jqt #sign_in .main {
+    padding: 10px; }
+    #jqt #sign_in .main ul.edit {
+      margin-bottom: 10px; }
+      #jqt #sign_in .main ul.edit li {
+        height: 25px; }
+        #jqt #sign_in .main ul.edit li input {
+          height: 20px;
+          text-shadow: transparent 0px 1px 1px;
+          border: 0px solid;
+          outline: none; }
+  #jqt div.main {
+    position: relative;
+    z-index: 1;
+    overflow-y: scroll; }
+    #jqt div.main div.scroller div.course {
+      padding: 20px 10px; }
+      #jqt div.main div.scroller div.course div.header {
+        height: 70px; }
+        #jqt div.main div.scroller div.course div.header a.price {
+          margin-top: 20px;
+          margin-right: 10px;
+          float: right; }
+        #jqt div.main div.scroller div.course div.header div.picture {
+          float: left;
+          width: 57px;
+          height: 57px;
+          overflow: hidden;
+          margin-left: 5px;
+          margin-right: 20px;
+          -webkit-box-shadow: 0px 1px 5px #545456;
+          border-radius: 10px; }
+        #jqt div.main div.scroller div.course div.header div.creator {
+          font-size: 10pt;
+          color: #3a3a3a; }
+        #jqt div.main div.scroller div.course div.header div.title {
+          font-size: 12pt;
+          color: black;
+          width: 140px;
+          margin-left: 80px;
+          white-space: normal; }
+      #jqt div.main div.scroller div.course div.description {
+        padding: 0px 5px;
+        direction: rtl; }
+    #jqt div.main div.scroller ul {
+      margin: 0px;
+      border: 0px solid; }
+      #jqt div.main div.scroller ul li {
+        border-radius: 0px;
+        height: 59px;
+        text-shadow: 0px 1px 1px #c2c2c2;
+        padding-top: 10px; }
+        #jqt div.main div.scroller ul li div.price {
+          font-size: 11pt;
+          color: #3a3a3a;
+          margin-top: 20px;
+          margin-right: 0px;
+          float: right;
+          padding-right: 30px;
+          height: 23px;
+          background: url("/images/client/jqtouch/themes/apple/chevron.png") -1px right no-repeat; }
+        #jqt div.main div.scroller ul li div.picture {
+          float: left;
+          width: 57px;
+          height: 57px;
+          overflow: hidden;
+          margin-left: 5px;
+          margin-right: 20px;
+          -webkit-box-shadow: 0px 1px 5px #545456;
+          border-radius: 10px; }
+        #jqt div.main div.scroller ul li div.creator {
+          font-size: 10pt;
+          color: #3a3a3a; }
+        #jqt div.main div.scroller ul li div.title {
+          font-size: 12pt;
+          color: black;
+          width: 120px;
+          margin-left: 80px;
+          white-space: normal; }
+        #jqt div.main div.scroller ul li.odd {
+          background-color: #98989c;
+          border-bottom: 1px solid #898a8d; }
+        #jqt div.main div.scroller ul li.even {
+          background-color: #adadb0;
+          border-top: 1px solid #bbbbbd; }
 
 div.bar {
-  position: absolute;
   bottom: 0px;
+  position: fixed;
   height: 49px;
   width: 100%;
   background: url("/images/client/bar_background.png") repeat-x;

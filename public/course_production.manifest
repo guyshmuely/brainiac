@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#17
+#24
 
 javascripts/cached/course.js
 stylesheets/cached/course.css
@@ -7,6 +7,7 @@ stylesheets/cached/course.css
 # stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
+images/client/jqtouch/themes/apple/grayButton.png
 images/client/jqtouch/themes/apple/backButton.png
 images/client/jqtouch/themes/apple/activeBackButton.png
 images/client/jqtouch/themes/apple/activeButton.png
@@ -17,6 +18,10 @@ images/client/yes.png
 images/client/no.png
 images/client/next.png
 images/client/play.png
+
+images/client/apple-touch-icon.png
+images/client/apple-touch-startup.jpg
+
 
 NETWORK:
 http://s3.amazonaws.com/brainiac/images/

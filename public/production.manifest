@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Rev 14
+# Rev 20
 
 # /index.html
 # /jqtouch/jqtouch/jqtouch.min.css
@@ -11,12 +11,14 @@ CACHE MANIFEST
 # /jqtouch/javascripts/topfunky-sparkline.js
 # /jqtouch/mobile.js
 
-javascripts/cached/all.js
-stylesheets/cached/all.css
+javascripts/cached/mobile.js
+stylesheets/cached/mobile.css
 stylesheets/client/home.css
 stylesheets/client/about.css
 images/client/jqtouch/themes/apple/redButton.png
+images/client/jqtouch/themes/apple/grayButton.png
 images/client/jqtouch/themes/apple/whiteButton.png
+images/client/jqtouch/themes/apple/blueButton.png
 images/client/jqtouch/themes/apple/backButton.png
 images/client/jqtouch/themes/apple/activeBackButton.png
 images/client/jqtouch/themes/apple/activeButton.png
@@ -34,15 +36,21 @@ images/client/search.png
 images/client/search_selected.png
 images/client/top.png
 images/client/top_selected.png
-
-NETWORK:
-http://s3.amazonaws.com/brainiac/images/
-http://s3.amazonaws.com/brainiac/icons/
 images/client/under_construction.jpg
 images/client/guy.jpg
 images/client/hagit.jpg
 images/client/sagi.jpg
+images/client/apple-touch-icon.png
+images/client/apple-touch-startup.jpg
+
+
+NETWORK:
+http://s3.amazonaws.com/brainiac/images/
+http://s3.amazonaws.com/brainiac/icons/
 /courses
+/accounts/sign_out
+/accounts/sign_in
+
 
 # FALLBACK:
 # /a /b
