@@ -1,20 +1,27 @@
 -content_for :head, stylesheet_link_tag('admin/account')
-%div
-  Accounts
-%table
-  %thead
-    %tr
-      %th
-        email
-      %th
-        confirmed?
-      %th
-        Edit
-  %tbody
-    -for account in @accounts
+%div#accounts
+  %h2#table_title
+    Accounts
+  =link_to 'new', new_admin_account_path , :id=>'new'
+  %table.data_table
+    %thead
       %tr
-        %td
-          =account.email
-        %td=account.confirmed?
-        %td
-          =link_to 'edit', edit_admin_account_path(account.id)
+        %th
+          email
+        %th.medium
+          confirmed?
+        %th.small
+          Actions
+    %tbody
+      -for account in @accounts
+        %tr{:class=>cycle ("even","odd")}
+          %td=account.email
+          %td
+            =account.confirmed? ? image_tag('/images/admin/accept.png') : image_tag('/images/admin/unpublish.png')
+          %td
+            =link_to '' , edit_admin_account_path(account.id) , :class =>'edit'
+            =link_to '' , admin_account_path(account.id) , :method => :delete , :class => 'delete'
+
+%div#create_account
+
+

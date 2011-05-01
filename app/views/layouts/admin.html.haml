@@ -45,5 +45,7 @@
               %span Dashboard7
         =image_tag '/images/admin/menu_spacer.png'
       %div#right_dash
-        %div=flash[:notice] unless flash[:notice].blank?
+        -[:notice,:error].each do |type|
+          -unless flash[type].blank?
+            %div{:class=>type}=flash[type]
         =yield

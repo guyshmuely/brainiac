@@ -2,6 +2,38 @@ body
   margin: 0px
   font-family: Tahoma, Geneva, sans-serif
   max-width: 1600px
+  a
+    text-decoration: none
+    color: black
+  ul
+    margin: 0px
+    padding: 0px
+    list-style-type: none
+  .notice
+    padding: 5px
+    border: 1px solid #9C9
+    background-color: #E2F9E3
+    color: #060
+  .error
+    padding: 5px
+    border: 1px solid #A3032E
+    background-color: #ffe4e1
+  #new
+    float: right
+    padding-top: 40px
+    margin-right: 12px
+    margin-bottom: 10px
+    border-radius: 10px
+    background: white url('/images/admin/new.png') no-repeat center 7px
+    width: 50px
+    height: 25px
+    text-align: center
+  table.data_table
+    thead
+      th.small
+        width: 80px
+      th.medium
+        width: 120px
   #container
     background: #F0F0F0 url('/images/admin/stripe.png') repeat-y fixed
     float: left
@@ -12,7 +44,7 @@ body
     #left_dash
       color: #f5f5f5
       margin-left: 20px
-      width: 18%
+      width: 210px
       position: fixed
       float: left
       clear: both
@@ -28,7 +60,7 @@ body
           background: url('/images/admin/menu_spacer.png') no-repeat
           width: 220px
           height: 46px
-          margin-left: -65px
+          margin-left: -25px
           clear: both
           float: left
           &.current, &:hover
@@ -61,14 +93,12 @@ body
         margin-bottom: 13px
     #right_dash
       margin-top: 20px
-      float: right
-      width: 82%
+      margin-left: 250px
+      margin-right: 15px
       min-height: 1000px
       #title
         color: gray
-        margin-left: 60px
       #deshboard_menu
-        margin-left: 30px
         li
           float: left
           margin: 0 15px 15px 0

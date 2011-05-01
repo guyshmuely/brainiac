@@ -1,1 +1,43 @@
-background-color :red
+#accounts
+  background-color: #e6eae9
+  width: 950px
+  -moz-border-radius: 10px
+  border-radius: 10px
+  padding: 20px
+  margin-top: 15px
+  #table_title
+    color: #292929
+    margin-top: 0px
+    margin-left: 10px
+    float: left
+  table
+    border-collapse: collapse
+    margin-left: 10px
+    width: 930px
+    td , th
+      border: 1px #ccc solid
+      text-align: left
+      padding: .3em
+      a
+        margin-right: 10px
+        float: left
+        height: 25px
+        width: 30px
+        &.edit
+          background: transparent url('/images/admin/edit.png') no-repeat center
+        &.delete
+          background: transparent url('/images/admin/delete.png') no-repeat center
+    thead
+      font-size: 20px
+      color: grey
+      background: #292929
+    tbody
+      tr
+        &.even
+          background: #EBF3FF
+        &.odd
+          background: white
+        &:hover
+          background: #3798e5
+
+
