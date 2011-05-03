@@ -1,4 +1,15 @@
--form_for ['admin',@account] do |f|
-  %div=f.text_field :email
-  %div=f.password_field :password
-  %div=f.submit
+-content_for :head, stylesheet_link_tag('admin/edit_new')
+%fieldset#cont
+  %legend
+    Edit account
+  -form_for ['admin',@account] do |f|
+    %p.inputrow
+      =f.label :email
+      %br
+      =f.text_field :email
+    %p.inputrow
+      =f.label :password
+      %br
+      =f.password_field :password
+    %p=f.submit
+

@@ -20,8 +20,10 @@ body {
     background-color: #ffe4e1; }
   body #new {
     float: right;
+    border: 1px solid #dadada;
     padding-top: 40px;
     margin-right: 12px;
+    margin-top: -20px;
     margin-bottom: 10px;
     border-radius: 10px;
     background: white url("/images/admin/new.png") no-repeat center 7px;
@@ -33,7 +35,7 @@ body {
   body table.data_table thead th.medium {
     width: 120px; }
   body #container {
-    background: #f0f0f0 url("/images/admin/stripe.png") repeat-y fixed;
+    background: #e6eae9 url("/images/admin/stripe.png") repeat-y fixed;
     float: left;
     position: relative;
     width: 100%; }
@@ -95,7 +97,8 @@ body {
       margin-right: 15px;
       min-height: 1000px; }
       body #container #right_dash #title {
-        color: gray; }
+        color: gray;
+        margin-top: 35px; }
       body #container #right_dash #deshboard_menu li {
         float: left;
         margin: 0 15px 15px 0;

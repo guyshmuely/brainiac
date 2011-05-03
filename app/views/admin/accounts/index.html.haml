@@ -1,6 +1,6 @@
 -content_for :head, stylesheet_link_tag('admin/account')
-%div#accounts
-  %h2#table_title
+%fieldset#accounts
+  %legend
     Accounts
   =link_to 'new', new_admin_account_path , :id=>'new'
   %table.data_table
@@ -22,6 +22,5 @@
             =link_to '' , edit_admin_account_path(account.id) , :class =>'edit'
             =link_to '' , admin_account_path(account.id) , :method => :delete , :class => 'delete'
 
-%div#create_account
 
 
