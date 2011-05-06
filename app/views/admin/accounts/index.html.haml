@@ -1,8 +1,8 @@
 -content_for :head, stylesheet_link_tag('admin/account')
-%fieldset#accounts
+%fieldset.field
   %legend
     Accounts
-  =link_to 'new', new_admin_account_path , :id=>'new'
+  =link_to 'new', new_admin_account_path , :class=>'button'
   %table.data_table
     %thead
       %tr
@@ -20,7 +20,7 @@
             =account.confirmed? ? image_tag('/images/admin/accept.png') : image_tag('/images/admin/unpublish.png')
           %td
             =link_to '' , edit_admin_account_path(account.id) , :class =>'edit'
-            =link_to '' , admin_account_path(account.id) , :method => :delete , :class => 'delete'
+            =link_to '' , admin_account_path(account.id) , :method => :delete ,:confirm => "are you sure?", :class => 'delete'
 
 
 

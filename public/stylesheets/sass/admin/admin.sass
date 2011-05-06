@@ -18,7 +18,7 @@ body
     padding: 5px
     border: 1px solid #A3032E
     background-color: #ffe4e1
-  #new
+  .button
     float: right
     border: 1px solid #DADADA
     padding-top: 40px
@@ -30,12 +30,77 @@ body
     width: 50px
     height: 25px
     text-align: center
+    &#back
+      background: white url("/images/admin/back.png") no-repeat center 7px
   table.data_table
     thead
       th.small
         width: 80px
       th.medium
         width: 120px
+  table
+    border-collapse: collapse
+    margin-left: 10px
+    width: 930px
+    td , th
+      border: 1px #ccc solid
+      text-align: left
+      padding: .3em
+    thead
+      font-size: 20px
+      color: grey
+      background: #292929
+    tbody
+      tr
+        &.even
+          background: #EBF3FF
+        &.odd
+          background: white
+        &:hover
+          background: #3798e5
+  fieldset.field
+    background-color: white
+    border: 1px solid #DADADA
+    width: 950px
+    -moz-border-radius: 10px
+    border-radius: 10px
+    padding: 20px
+    margin-top: 35px
+    legend
+      color: #292929
+      font-weight: bold
+      font-size: 20px
+    form
+      p.inputrow
+        input
+          height: 25px
+          border: 1px solid #CCCCCC
+          transition: all 0.2s ease-in-out
+          -o-transition: all 0.2s ease-in-out
+          -moz-transition: all 0.2s ease-in-out
+          -webkit-transition: all 0.2s ease-in-out
+          &:focus
+            border: 1px solid black
+            -webkit-box-shadow: 0 0 25px #CCCCCC
+            -moz-box-shadow: 0 0 25px #CCCCCC
+            transform: (scale(1.03))
+            -webkit-transform: (scale(1.03))
+            -moz-transform: (scale(1.03))
+            -o-transform: (scale(1.03))
+      textarea
+        transition:  all 0.2s ease-in-out
+        -o-transition:  all 0.2s ease-in-out
+        -moz-transition: all 0.2s ease-in-out
+        -webkit-transition: all 0.2s ease-in-out
+        &:focus
+          border: 1px solid black
+          -webkit-box-shadow: 0 0 25px #CCCCCC
+          -moz-box-shadow: 0 0 25px #CCCCCC
+          transform: (scale(1.03))
+          -webkit-transform: (scale(1.03))
+          -moz-transform: (scale(1.03))
+          -o-transform: (scale(1.03))
+
   #container
     background: #e6eae9 url('/images/admin/stripe.png') repeat-y fixed
     float: left
@@ -54,6 +119,8 @@ body
       h1
         margin-bottom: 10px
         font-size: 45px
+      a#log_out
+        color: white
       #start_menu
         margin-top: 70px
         margin-left: 0px

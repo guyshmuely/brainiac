@@ -2,9 +2,9 @@ class Course < ActiveRecord::Base
   has_and_belongs_to_many :accounts
   belongs_to :account
   has_many :cards
-  has_attached_file :image, 
+  has_attached_file :image,
                     :storage => :s3,
-                    :path => "/:attachment/:id/:style/:filename",                    
+                    :path => "/:attachment/:id/:style/:filename",
                     :s3_credentials => {:access_key_id => S3[:key],
                                         :secret_access_key => S3[:secret]},
                     :bucket => S3[:bucket],

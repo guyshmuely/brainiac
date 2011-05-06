@@ -1,44 +1,9 @@
-#accounts {
-  background-color: white;
-  border: 1px solid #dadada;
-  width: 950px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 35px; }
-  #accounts legend {
-    color: #292929;
-    font-weight: bold;
-    font-size: 20px; }
-  #accounts #table_title {
-    color: #292929;
-    margin-top: 0px;
-    margin-left: 10px;
-    float: left; }
-  #accounts table {
-    border-collapse: collapse;
-    margin-left: 10px;
-    width: 930px; }
-    #accounts table td, #accounts table th {
-      border: 1px #cccccc solid;
-      text-align: left;
-      padding: 0.3em; }
-      #accounts table td a, #accounts table th a {
-        margin-right: 10px;
-        float: left;
-        height: 25px;
-        width: 30px; }
-        #accounts table td a.edit, #accounts table th a.edit {
-          background: transparent url("/images/admin/edit.png") no-repeat center; }
-        #accounts table td a.delete, #accounts table th a.delete {
-          background: transparent url("/images/admin/delete.png") no-repeat center; }
-    #accounts table thead {
-      font-size: 20px;
-      color: grey;
-      background: #292929; }
-    #accounts table tbody tr.even {
-      background: #ebf3ff; }
-    #accounts table tbody tr.odd {
-      background: white; }
-    #accounts table tbody tr:hover {
-      background: #3798e5; }
+table a {
+  margin-right: 10px;
+  float: left;
+  height: 25px;
+  width: 30px; }
+  table a.edit {
+    background: transparent url("/images/admin/edit.png") no-repeat center; }
+  table a.delete {
+    background: transparent url("/images/admin/delete.png") no-repeat center; }

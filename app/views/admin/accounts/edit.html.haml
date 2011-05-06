@@ -1,14 +1,14 @@
--content_for :head, stylesheet_link_tag('admin/edit_new')
-%fieldset#cont
+%fieldset.field
   %legend
     Edit account
+  =link_to 'back', admin_accounts_path , :class=>'button' ,:id=>'back'
   -form_for ['admin',@account] do |f|
     %p.inputrow
-      =f.label :email
+      =f.label 'Email:'
       %br
       =f.text_field :email
     %p.inputrow
-      =f.label :password
+      =f.label 'Password:'
       %br
       =f.password_field :password
     %p=f.submit

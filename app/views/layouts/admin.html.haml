@@ -13,15 +13,19 @@
         =current_account.email
         %br
         %br
-        =link_to 'log out' , destroy_account_session_path
+        =link_to 'log out' , destroy_account_session_path, :id=> 'log_out'
         %ul#start_menu
-          %li.current
+          %li{:class=>controller.action_name == 'dashboard' ? 'current': nil}
+            =link_to account_root_path do
+              =image_tag '/images/admin/settings.png'
+              %span Dashboard
+          %li{:class=>controller.controller_name=='accounts' ? 'current' : nil}
             =link_to admin_accounts_path do
-              =image_tag '/images/admin/computer.png'
+              =image_tag '/images/admin/account.png'
               %span Accounts
-          %li
+          %li{:class=>controller.controller_name=='courses' ? 'current' : nil}
             =link_to admin_courses_path do
-              =image_tag '/images/admin/users.png'
+              =image_tag '/images/admin/course.png'
               %span Courses
           %li
             =link_to nil do
@@ -39,10 +43,6 @@
             =link_to nil do
               =image_tag '/images/admin/coin.png'
               %span Dashboard6
-          %li
-            =link_to nil do
-              =image_tag '/images/admin/settings.png'
-              %span Dashboard7
         =image_tag '/images/admin/menu_spacer.png'
       %div#right_dash
         -[:notice,:error].each do |type|

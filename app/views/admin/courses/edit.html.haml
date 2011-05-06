@@ -1,15 +1,32 @@
--form_for [:admin,@course], :html => { :multipart => true } do |f|
-  %div=f.text_field :title
-  %div
-    =f.text_field :price
-  %div
-    =f.text_area :description
-  %div
-    Icon
-    =image_tag @course.icon.url(:thumb) if @course.icon.file?
-    =f.file_field :icon
-  %div
-    Image
-    =image_tag @course.image.url(:thumb) if @course.image.file?
-    =f.file_field :image
-  %div=f.submit 'Save'
+%fieldset.field
+  %legend
+    Edit course
+  =link_to 'back', admin_courses_path , :class=>'button' ,:id=>'back'
+  -form_for [:admin,@course], :html => { :multipart => true } do |f|
+    %p.inputrow
+      =f.label 'Name:'
+      %br
+      =f.text_field :display_name
+    %p.inputrow
+      =f.label 'Title:'
+      %br
+      =f.text_field :title
+    %p.inputrow
+      =f.label 'Price (in cents):'
+      %br
+      =f.text_field :price_in_cents
+    %p.inputrow
+      =f.label 'description:'
+      %br
+      =f.text_area :description
+    %p.inputrow
+      =f.label 'Icon:'
+      =image_tag @course.image.url(:thumb) if @course.image.file?
+      %br
+      =f.file_field :icon
+    %p.inputrow
+      =f.label 'Image:'
+      =image_tag @course.image.url(:thumb) if @course.image.file?
+      %br
+      =f.file_field :image
+    %p=f.submit
