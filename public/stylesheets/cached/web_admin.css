@@ -17,7 +17,8 @@ body {
   body .error {
     padding: 5px;
     border: 1px solid #a3032e;
-    background-color: #ffe4e1; }
+    background-color: #ffe4e1;
+    height: 15px; }
   body .button {
     float: right;
     border: 1px solid #dadada;
@@ -81,6 +82,8 @@ body {
         -webkit-transform: scale(1.03);
         -moz-transform: scale(1.03);
         -o-transform: scale(1.03); }
+      body fieldset.field form p.inputrow input.error {
+        height: 17px; }
     body fieldset.field form textarea {
       transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
@@ -117,7 +120,7 @@ body {
       body #container #left_dash #start_menu {
         margin-top: 70px;
         margin-left: 0px;
-        height: 305px; }
+        height: 180px; }
         body #container #left_dash #start_menu li {
           background: url("/images/admin/menu_spacer.png") no-repeat;
           width: 220px;

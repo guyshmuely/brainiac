@@ -7,6 +7,10 @@ class Admin::CardsController < Admin::AdminController
       format.html
       format.json {render :json=> @cards.to_json(:only=>[:content])}
       format.mobile { render :layout => false }
+      format.xls do
+        data = @course.export_cards_to_excel
+        send_data(data, :filename => "#{@course.title}_cards.xls")
+      end
     end
   end
 
@@ -57,6 +61,17 @@ class Admin::CardsController < Admin::AdminController
       flash[:error]='Error: delete card failed'
     end
     redirect_to admin_course_cards_path(:course_id=>course)
+  end
+
+  def import
+    course = Course.find(params[:course_id])
+    if (number_of_imported_cards = course.import_cards_from_excel(params[:cards])) > 0
+      flash[:notice] = "imported #{number_of_imported_cards} cards"
+    else
+      flash[:error] = "cards couldn't be imported"
+    end
+
+    redirect_to :action => :index
   end
 
 end

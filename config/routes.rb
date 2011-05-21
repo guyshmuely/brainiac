@@ -13,7 +13,9 @@ Brainiac::Application.routes.draw do
   namespace 'admin' do
     resources :accounts
     resources :courses do
-      resources :cards
+      resources :cards do
+        post :import, :on => :collection
+      end
     end
   end
 

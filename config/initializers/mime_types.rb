@@ -7,3 +7,4 @@
 #Mime::Type.register_alias "application/json", :json
 Mime::Type.register_alias "text/html", :mobile
 Mime::Type.register_alias "text/cache-manifest", :manifest
+Mime::Type.register "application/vnd.ms-excel", :xls

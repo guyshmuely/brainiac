@@ -27,10 +27,11 @@
             =link_to admin_courses_path do
               =image_tag '/images/admin/course.png'
               %span Courses
-          %li{:class=>controller.controller_name=='cards' ? 'current' : nil}
-            =link_to nil do
-              =image_tag '/images/admin/cards.png'
-              %span Cards
+          - if controller.controller_name=='cards'
+            %li{:class=>controller.controller_name=='cards' ? 'current' : nil}
+              =link_to nil do
+                =image_tag '/images/admin/cards.png'
+                %span Cards
         =image_tag '/images/admin/menu_spacer.png'
       %div#right_dash
         -[:notice,:error].each do |type|

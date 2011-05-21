@@ -4,6 +4,11 @@
     Cards for #{@course.title} course
   =link_to 'new', new_admin_course_card_path(:course_id=>@course), :class=>'button'
   =link_to 'back', admin_courses_path(:course_id=>@course), :class=>'button', :id=> 'back'
+  %div=link_to 'export', admin_course_cards_path(:course_id=>@course,:format=>'xls'), :class=>'button'
+
+  =form_tag(import_admin_course_cards_path(:course_id=>@course), :method => "post", :multipart=>true) do
+    = file_field_tag(:cards)
+    = submit_tag("Import")
   %table.data_table
     %thead
       %tr
