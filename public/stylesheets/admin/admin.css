@@ -41,6 +41,15 @@ body {
     border-collapse: collapse;
     margin-left: 10px;
     width: 930px; }
+    body table a {
+      margin-right: 10px;
+      float: left;
+      height: 25px;
+      width: 30px; }
+      body table a.edit {
+        background: transparent url("/images/admin/edit.png") no-repeat center; }
+      body table a.delete {
+        background: transparent url("/images/admin/delete.png") no-repeat center; }
     body table td, body table th {
       border: 1px #cccccc solid;
       text-align: left;
