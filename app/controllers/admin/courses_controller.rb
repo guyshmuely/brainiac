@@ -37,9 +37,9 @@ class Admin::CoursesController < Admin::AdminController
   end
 
   def destroy
-    account = Account.find(params[:id])
-    if account.destroy
-      flash[:notice]="Course #{course.id} deleted successfully"
+    course = Course.find(params[:id])
+    if course.destroy
+      flash[:notice]="Course #{course.title} deleted successfully"
     else
       flash[:error]='Error: delete course failed'
     end

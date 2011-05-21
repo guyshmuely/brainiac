@@ -34,4 +34,8 @@ class Course < ActiveRecord::Base
     self.cards.count
   end
 
+  validates_presence_of(:title)
+  validates_presence_of(:display_name)
+  validates_presence_of(:price_in_cents)
+
 end

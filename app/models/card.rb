@@ -10,4 +10,6 @@ class Card < ActiveRecord::Base
     super || 'ltr'
   end
 
+  validates_presence_of(:question)
+  validates_presence_of(:solution)
 end

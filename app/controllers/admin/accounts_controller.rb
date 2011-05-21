@@ -4,6 +4,10 @@ class Admin::AccountsController < Admin::AdminController
     @accounts = Account.all
   end
 
+  def show
+
+  end
+
   def edit
     @account = Account.find(params[:id])
   end

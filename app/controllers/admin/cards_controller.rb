@@ -20,11 +20,17 @@ class Admin::CardsController < Admin::AdminController
   end
 
   def create
-    course = Course.find(params[:course_id])
-    card = Card.create params[:card]
-    course.cards << card
-    redirect_to :action=>:index
+    @course = Course.find(params[:course_id])
+    @card = Card.new
+    if @card.update_attributes(params[:card])
+      flash[:notice]='Card created successfully'
+      @course.cards << @card
+      redirect_to :action=>:index
+    else
+      render :action =>:new
+    end
   end
+
 
   def edit
     @course = Course.find(params[:course_id])
@@ -34,14 +40,22 @@ class Admin::CardsController < Admin::AdminController
   def update
     course = Course.find(params[:course_id])
     @card = Card.find(params[:id])
-    @card.update_attributes(params[:card])
-    redirect_to admin_course_cards_path(:course_id=>course)
+    if @card.update_attributes(params[:card])
+      flash[:notice]='Card updated successfully'
+      redirect_to admin_course_cards_path(:course_id=>course)
+    else
+      render :action =>:edit
+    end
   end
 
   def destroy
     course = Course.find(params[:course_id])
     @card = Card.find(params[:id])
-    @card.destroy
+    if @card.destroy
+      flash[:notice]="Card deleted successfully"
+    else
+      flash[:error]='Error: delete card failed'
+    end
     redirect_to admin_course_cards_path(:course_id=>course)
   end
 

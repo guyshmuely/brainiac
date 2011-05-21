@@ -1,7 +1,25 @@
-%div=link_to 'back', admin_courses_path
-%div=link_to 'new', new_admin_course_card_path(:course_id=>@course)
--for card in @cards
-  %div
-    =card.question
-    =link_to 'edit', edit_admin_course_card_path(:course_id=>@course.id, :id=>card.id)
-    =link_to "delete", admin_course_card_path(:course_id=>@course.id, :id=>card.id), :method => :delete, :confirm => "are you sure?"
+-content_for :head, stylesheet_link_tag('admin/account_course')
+%fieldset.field
+  %legend
+    Cards for #{@course.title} course
+  =link_to 'new', new_admin_course_card_path(:course_id=>@course), :class=>'button'
+  =link_to 'back', admin_courses_path(:course_id=>@course), :class=>'button', :id=> 'back'
+  %table.data_table
+    %thead
+      %tr
+        %th
+          Card question
+        %th
+          Card solution
+        %th.small
+          Actions
+    %tbody
+      -for card in @cards
+        %tr{:class=>cycle ("even","odd")}
+          %td
+            =card.question
+          %td
+            =card.solution
+          %td
+            =link_to '', edit_admin_course_card_path(:course_id=>@course.id, :id=>card.id) ,:class => 'edit'
+            =link_to '' , admin_course_card_path(:course_id=>@course.id, :id=>card.id) , :method => :delete ,:confirm => "are you sure?", :class => 'delete'
